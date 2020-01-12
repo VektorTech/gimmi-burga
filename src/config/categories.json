@@ -1,0 +1,54 @@
+[
+    { 
+        "name":"Breakfast a la Carte",
+        "id": ""
+    },
+    { 
+        "name":"Breakfast Combos",
+        "id": ""
+    },
+    { 
+        "name":"Burgers a la Carte",
+        "id": ""
+    },
+    { 
+        "name":"Burger Combos",
+        "id": ""
+    },
+    { 
+        "name":"Chicken a la Carte",
+        "id": ""
+    }, 
+    { 
+        "name":"Chicken Combos",
+        "id": ""
+    },
+    { 
+        "name":"Premium Salads",
+        "id": ""
+    },
+    { 
+        "name":"Snacks & Sides",
+        "id": ""
+    },
+    { 
+        "name":"Jack's Deals",
+        "id": ""
+    },
+    { 
+        "name":"Desserts",
+        "id": ""
+    },
+    { 
+        "name":"Kid's Combos",
+        "id": ""
+    },
+    { 
+        "name":"Old-Fashioned Thick Shakes",
+        "id": ""
+    },
+    { 
+        "name":"Beverages",
+        "id": ""
+    }
+]
