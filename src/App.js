@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './containers/header';
 
+import { FoodSection } from './components/foodSection';
 import { Body } from './components/bodyWrapper';
 import { BodyMain } from './components/bodyMain';
 import { CategorySection } from './components/categorySection';
@@ -17,7 +18,9 @@ class App extends Component {
                         <CategorySection>
                             <CategoryList />
                         </CategorySection>
-                        
+                        <FoodSection>
+                            
+                        </FoodSection>
                     </BodyMain>
                     
                     <div>
