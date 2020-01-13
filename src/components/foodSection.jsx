@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
-import * as c from '../styles/foodSection.styles';
+import styled from 'styled-components';
 
-export const FoodSection = ({children}) => <c.FoodSection>{children}</c.FoodSection>;
+const Section = styled.section`
+    width:100%;
+    height: 5rem;
+`;
+
+export const FoodSection = ({children}) => <Section>{children}</Section>;

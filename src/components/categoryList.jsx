@@ -14,7 +14,9 @@ export const CategoryList = () => {
                 } return null;     
             })}
             </c.CategoriesList>
+            <div>
             <button style={{marginLeft: 'auto'}} onClick={() => { page<=listData.length ? nextPage(page+6) : nextPage(6) }}>Next</button>
+            </div>
         </c.CategoryWrapper>
     );
 };
