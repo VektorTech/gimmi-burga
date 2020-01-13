@@ -10,6 +10,7 @@ const Body = styled.div`
     height: 100%;
     display: grid;
     grid-template-columns: 70% 1fr;
+    grid-template-rows: 1fr
 `;
 
 class App extends Component {

@@ -11,5 +11,44 @@ const FoodListWrapper = styled.div`
 export const FoodList = () => (
     <FoodListWrapper>
         <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
+        <FoodItem></FoodItem>
     </FoodListWrapper>
 );

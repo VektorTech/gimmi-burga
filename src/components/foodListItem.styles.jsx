@@ -10,6 +10,7 @@ export const FoodItemWrapper = styled.div`
 export const ItemImage = styled.div`
     width: 100%;
     height: 60%;
+    border-radius: 1rem;
     background-color: red;
 `;
 

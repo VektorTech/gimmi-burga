@@ -7,7 +7,8 @@ import { FoodList } from '../containers/foodList';
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    max-height: calc(100vh - 4.5rem);
+    overflow-y: scroll;
     padding: 2rem 0 0 10%;
 `;
 
