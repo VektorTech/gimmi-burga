@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
 import Header from './containers/header';
+import FoodCart from './containers/foodCart';
+import { BodyMain } from './components/bodyMain';
 
-import { Body } from './hoc/bodyWrapper';
-import { BodyMain } from './hoc/bodyMain';
-import { CategorySection } from './hoc/categorySection';
-import { FoodSection } from './hoc/foodSection';
-
-import { CategoryList } from './components/categoryList';
-import { FoodList } from './containers/foodList';
-
-
-const HomeScreen = () => (
-    <BodyMain>
-        <CategorySection>
-            <CategoryList />
-        </CategorySection>
-        <FoodSection>
-            <FoodList />
-        </FoodSection>
-    </BodyMain>
-);
+const Body = styled.div`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 70% 1fr;
+`;
 
 class App extends Component {
     render(){
@@ -29,11 +18,8 @@ class App extends Component {
             <>
                 <Header />
                 <Body>
-                    <BrowserRouter>
-                        <Route path="/" component={HomeScreen} />
-                    </BrowserRouter>               
-                    <div>
-                    </div>
+                    <BodyMain />
+                    <FoodCart />
                 </Body>
             </> 
         );
