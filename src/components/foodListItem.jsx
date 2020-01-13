@@ -1,5 +1,5 @@
 import React from 'react';
-import * as c from '../styles/foodListItem.styles';
+import * as c from './foodListItem.styles';
 
 export const FoodItem = () => {
     return (

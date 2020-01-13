@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as c from '../styles/categoryList.styles';
+import * as c from './categoryList.styles';
 import listData from '../config/categories.json';
 
 export const CategoryList = () => {

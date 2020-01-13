@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FoodItem } from '../components/foodItem';
+import { FoodItem } from '../components/foodListItem';
 
 const FoodListWrapper = styled.div`
     display: flex;
@@ -10,5 +10,6 @@ const FoodListWrapper = styled.div`
 
 export const FoodList = () => (
     <FoodListWrapper>
+        <FoodItem></FoodItem>
     </FoodListWrapper>
 );

@@ -3,10 +3,11 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './containers/header';
 
-import { FoodSection } from './components/foodSection';
-import { Body } from './components/bodyWrapper';
-import { BodyMain } from './components/bodyMain';
-import { CategorySection } from './components/categorySection';
+import { Body } from './hoc/bodyWrapper';
+import { BodyMain } from './hoc/bodyMain';
+import { CategorySection } from './hoc/categorySection';
+import { FoodSection } from './hoc/foodSection';
+
 import { CategoryList } from './components/categoryList';
 import { FoodList } from './containers/foodList';
 
