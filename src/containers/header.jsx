@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as c from './header.styles';
 
 const Header = () => {
-    const [ searchVal, setSearchVal ] = useState("");
-
-    const handleChangeText = (e) => {
-        setSearchVal(e.target.value);
-    }
-
     return ( 
     <c.HeaderWrapper>
         <c.HeaderContainer>
             <c.LogoContainer></c.LogoContainer>
             <c.SearchContainer>
-                <c.SearchInput placeholder="Search" value={searchVal} onChange={handleChangeText} />
+                <c.SearchInput placeholder="Search" />
             </c.SearchContainer>
             <c.MenuContainer>
                 <c.List>
-                    <c.ListInfo>Ico</c.ListInfo>
+                    <c.ListInfo><Link to="signin">Ico</Link></c.ListInfo>
                     <c.ListInfo>Cart</c.ListInfo>
                 </c.List>
             </c.MenuContainer>
