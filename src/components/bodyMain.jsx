@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { CategoryList } from './categoryList';
@@ -19,10 +19,21 @@ const HomeScreen = () => (
     </>
 );
 
+const AddToCart = () => {
+    let { foodID } = useParams();
+    console.log(foodID);
+
+    return (
+    <>
+        <FoodList />
+    </>);
+};
+
 export const BodyMain = ({children}) => (
     <Wrapper>
          <BrowserRouter>
-            <Route path="/" component={HomeScreen} />
+            <Route exact path="/" component={HomeScreen} />
+            <Route path="/add-to-cart/:foodID" component={AddToCart} />
         </BrowserRouter>  
     </Wrapper>
 );

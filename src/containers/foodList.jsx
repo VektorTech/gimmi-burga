@@ -10,7 +10,7 @@ const FoodListWrapper = styled.div`
 
 export const FoodList = () => (
     <FoodListWrapper>
-        <FoodItem></FoodItem>
+        <FoodItem id="1"></FoodItem>
         <FoodItem></FoodItem>
         <FoodItem></FoodItem>
         <FoodItem></FoodItem>
