@@ -12,7 +12,7 @@ const FoodListWrapper = styled.div`
 const FoodList = ({products}) => (
     <FoodListWrapper>
         {products.map( product => (
-            <FoodItem key={product.name} {...product} />
+            <FoodItem key={product._id} {...product} />
         ))}
     </FoodListWrapper>
 );

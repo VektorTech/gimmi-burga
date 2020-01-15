@@ -8,7 +8,7 @@ const INIT_STATE = {
 export default (state = INIT_STATE, action) => {
     switch(action.type){
         case actionTypes.PRODUCTS_FETCHED: return {
-            ...state, all_products: action.payload.products
+            ...state, all_products: action.payload
         }
         default: return state
     };

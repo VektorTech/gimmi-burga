@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
 
 import { getAllProducts } from './redux/actions/product-actions';
@@ -25,7 +24,7 @@ const Body = () => <BodyDiv><BodyMain /><FoodCart /></BodyDiv>;
 
 class App extends Component {
     componentDidMount(){
-        if(this.props.products !== []){
+        if(this.props.products.length === 0){
             this.props.getAllProducts();
         }
     }
@@ -50,9 +49,9 @@ const mapStateToProps = (store) => {
     };
 };
 
-const mapDispatchToProps = (store) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        getAllProducts: bindActionCreators(getAllProducts)
+        getAllProducts: () => dispatch(getAllProducts())
     };
 };
 

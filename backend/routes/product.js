@@ -2,7 +2,8 @@ const router = require('express').Router();
 
 const productModel = require('../models/product');
 
-router.post('/', async (req, res) => {
+router.get('/', async (req, res) => {
+    console.log("Here")
     productModel.find({}, (err, products) => {
         res.json(products);
     });
