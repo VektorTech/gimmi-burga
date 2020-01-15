@@ -3,7 +3,7 @@ import { BrowserRouter, Route, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { CategoryList } from './categoryList';
-import { FoodList } from '../containers/foodList';
+import FoodList from '../containers/foodList';
 
 const Wrapper = styled.div`
     width: 100%;

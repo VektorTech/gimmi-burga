@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
+
+import { getAllProducts } from './redux/actions/product-actions';
 
 import Header from './containers/header';
 import FoodCart from './containers/foodCart';
@@ -20,6 +24,12 @@ const BodyDiv = styled.div`
 const Body = () => <BodyDiv><BodyMain /><FoodCart /></BodyDiv>;
 
 class App extends Component {
+    componentDidMount(){
+        if(this.props.products !== []){
+            this.props.getAllProducts();
+        }
+    }
+
     render(){
         return( 
             <>
@@ -34,4 +44,16 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapStateToProps = (store) => {
+    return {
+        products: store.products.all_products
+    };
+};
+
+const mapDispatchToProps = (store) => {
+    return {
+        getAllProducts: bindActionCreators(getAllProducts)
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

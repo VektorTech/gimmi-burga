@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FoodItem } from '../components/foodListItem';
+import { connect } from 'react-redux';
 
 const FoodListWrapper = styled.div`
     display: flex;
@@ -8,47 +9,18 @@ const FoodListWrapper = styled.div`
     flex-wrap: wrap;
 `;
 
-export const FoodList = () => (
+const FoodList = ({products}) => (
     <FoodListWrapper>
-        <FoodItem id="1"></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
-        <FoodItem></FoodItem>
+        {products.map( product => (
+            <FoodItem key={product.name} {...product} />
+        ))}
     </FoodListWrapper>
 );
+
+const mapStateToProps = (store) => {
+    return {
+        products: store.products.all_products
+    };
+};
+
+export default connect(mapStateToProps)(FoodList);
