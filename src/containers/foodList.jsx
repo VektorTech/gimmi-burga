@@ -12,6 +12,7 @@ const FoodListWrapper = styled.div`
 
 const FoodList = ({products}) => (
     <FoodListWrapper>
+        {console.log(products)}
         {products.length ? products.map( product => (
             <FoodItem key={product._id} {...product} />
         )) : <p>Populating...</p>} 
