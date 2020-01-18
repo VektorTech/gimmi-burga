@@ -23,6 +23,7 @@ const BodyDiv = styled.div`
 `;
 
 const Body = () => <BodyDiv><BodyMain /><FoodCart /></BodyDiv>;
+const SearchView = () => <BodyDiv><BodyMain /><FoodCart /></BodyDiv>;
 const AddItemView = () => <BodyDiv><AddToCart /><FoodCart /></BodyDiv>;
 
 class App extends Component {
@@ -40,7 +41,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Body}/>
                     <Route exact path="/category" component={Body}/>
-                    <Route exact path="/search" component={Body}/>
+                    <Route exact path="/search" component={SearchView}/>
                     <Route path="/add-to-cart/:foodID" component={AddItemView} />
                     <Route path="/signin" component={Signin}/>
                     <Route path="/signup" component={Signup}/>

@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 const getProducts = (state) => state.product.all_products;
-const getCatName = (_, cat_name) => cat_name;
+const getCatName = (_, cat_name) => decodeURI(cat_name);
 
 export const getFoodList = createSelector( 
     [getProducts, getCatName],
