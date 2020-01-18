@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as c from './header.styles';
 
 const Header = () => {
+    const history = useHistory();
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        const query = document.getElementById("search").value;
+        history.push(`search?q=${query}`);
+    } 
+
     return ( 
     <c.HeaderWrapper>
         <c.HeaderContainer>
             <c.LogoContainer></c.LogoContainer>
             <c.SearchContainer>
-                <c.SearchInput placeholder="Search" />
+                <form>
+                    <c.SearchInput placeholder="Search" id="search" /> 
+                    <input type="submit" onClick={onSubmitHandler} style={{"display":"none"}}/> 
+                </form>
             </c.SearchContainer>
             <c.MenuContainer>
                 <c.List>

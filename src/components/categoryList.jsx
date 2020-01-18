@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as c from './categoryList.styles';
 import listData from '../config/categories.json';
 
@@ -10,7 +11,7 @@ export const CategoryList = () => {
             <c.CategoriesList>
             {listData.map((item, index) => { 
                 if( index >= page-6 && index < page ){
-                    return <c.CategoriesListItem><a href="#">{item.name}</a></c.CategoriesListItem>    
+                    return <c.CategoriesListItem><Link to={"category?type="+item.name}>{item.name}</Link></c.CategoriesListItem>    
                 } return null;     
             })}
             </c.CategoriesList>

@@ -5,7 +5,6 @@ const INIT_STATE = {
 };
 
 export default (state = INIT_STATE, action) => {
-    console.log(action)
     switch(action.type){
         case actionTypes.ADD_TO_CART: 
             return {

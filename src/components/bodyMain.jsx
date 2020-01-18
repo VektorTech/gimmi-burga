@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 import { CategoryList } from './categoryList';
 import FoodList from '../containers/foodList';
-import AddToCart from '../pages/add-to-cart';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -13,18 +12,14 @@ const Wrapper = styled.div`
     padding: 2rem 0 0 10%;
 `;
 
-const HomeScreen = () => (
-    <>
-        <CategoryList />
-        <FoodList />
-    </>
-);
-
-export const BodyMain = ({children}) => (
-    <Wrapper>
-         <BrowserRouter>
-            <Route exact path="/" component={HomeScreen} />
-            <Route path="/add-to-cart/:foodID" component={AddToCart} />
-        </BrowserRouter>  
-    </Wrapper>
-);
+export const BodyMain = () => {
+    const history = useHistory();
+    return (
+        <Wrapper>
+            <>
+            <CategoryList />
+            <FoodList category={history.location.search.split("=")[1]} />
+            </> 
+        </Wrapper>
+    );
+};

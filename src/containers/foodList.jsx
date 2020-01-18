@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FoodItem } from '../components/foodListItem';
 import { connect } from 'react-redux';
+import { FoodItem } from '../components/foodListItem';
+import { getFoodList } from '../redux/selectors/food-list.selector';
 
 const FoodListWrapper = styled.div`
     display: flex;
@@ -17,9 +18,9 @@ const FoodList = ({products}) => (
     </FoodListWrapper>
 );
 
-const mapStateToProps = (store) => {
+const mapStateToProps = (store, props) => {
     return {
-        products: store.product.all_products
+        products: getFoodList(store, props.category)
     };
 };
 

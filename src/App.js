@@ -6,11 +6,13 @@ import { getAllProducts } from './redux/actions/product-actions';
 
 import Header from './containers/header';
 import FoodCart from './containers/foodCart';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { BodyMain } from './components/bodyMain';
 
 import Signup from './pages/signup';
 import Signin from './pages/signin';
+import AddToCart from './pages/add-to-cart';
+
 
 const BodyDiv = styled.div`
     width: 100%;
@@ -21,6 +23,7 @@ const BodyDiv = styled.div`
 `;
 
 const Body = () => <BodyDiv><BodyMain /><FoodCart /></BodyDiv>;
+const AddItemView = () => <BodyDiv><AddToCart /><FoodCart /></BodyDiv>;
 
 class App extends Component {
     componentDidMount(){
@@ -34,9 +37,14 @@ class App extends Component {
             <>
                 <BrowserRouter>
                 <Header />
+                <Switch>
                     <Route exact path="/" component={Body}/>
+                    <Route exact path="/category" component={Body}/>
+                    <Route exact path="/search" component={Body}/>
+                    <Route path="/add-to-cart/:foodID" component={AddItemView} />
                     <Route path="/signin" component={Signin}/>
                     <Route path="/signup" component={Signup}/>
+                </Switch>
                 </BrowserRouter>
             </> 
         );
