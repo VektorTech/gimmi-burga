@@ -11,15 +11,15 @@ const FoodListWrapper = styled.div`
 
 const FoodList = ({products}) => (
     <FoodListWrapper>
-        {products.map( product => (
+        {products.length ? products.map( product => (
             <FoodItem key={product._id} {...product} />
-        ))}
+        )) : <p>Populating...</p>} 
     </FoodListWrapper>
 );
 
 const mapStateToProps = (store) => {
     return {
-        products: store.products.all_products
+        products: store.product.all_products
     };
 };
 

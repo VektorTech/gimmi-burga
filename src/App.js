@@ -45,7 +45,7 @@ class App extends Component {
 
 const mapStateToProps = (store) => {
     return {
-        products: store.products.all_products
+        products: store.product.all_products
     };
 };
 

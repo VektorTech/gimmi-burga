@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { CategoryList } from './categoryList';
 import FoodList from '../containers/foodList';
+import AddToCart from '../pages/add-to-cart';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -18,16 +19,6 @@ const HomeScreen = () => (
         <FoodList />
     </>
 );
-
-const AddToCart = () => {
-    let { foodID } = useParams();
-    console.log(foodID);
-
-    return (
-    <>
-        <FoodList />
-    </>);
-};
 
 export const BodyMain = ({children}) => (
     <Wrapper>

@@ -1,24 +1,25 @@
 import React from 'react';
 import * as c from './foodCart.styles';
+import { connect } from 'react-redux';
+
 import { CartDeliveryInfo } from '../components/cartDeliveryInfo';
 import { CartListItem, DeliveryItem } from '../components/cartListItem';
 
-const FoodCart = () => {
+import { removeFromCart } from '../redux/actions/cart.actions';
+
+const FoodCart = ({cart, removeFromCart}) => {
     return (
         <c.FoodCartWrapper>
             <c.CartTitle>Order List</c.CartTitle>
             <CartDeliveryInfo />
-            <div>
-                <CartListItem />
-                <CartListItem />
-                <CartListItem />
-                <DeliveryItem />
+            <div>      
+                { cart.map(item => <CartListItem {...item} removeFromCart={removeFromCart} />) }
             </div>
+            <DeliveryItem />
             <div>
                 <c.Total>Total:</c.Total>
                 <c.TotalAmount>$14.99</c.TotalAmount>
             </div>
-
             <c.ButtonWrapper>
                 <c.CheckoutBtn>Checkout</c.CheckoutBtn>
             </c.ButtonWrapper>
@@ -26,4 +27,6 @@ const FoodCart = () => {
     );
 }
 
-export default FoodCart;
+export default connect( 
+    ({cart}) => ({ cart: cart.cart }),
+    (dispatch) => ({removeFromCart: (id) => dispatch(removeFromCart(id))}) )(FoodCart);
