@@ -13,7 +13,7 @@ const FoodCart = ({cart, removeFromCart}) => {
             <c.CartTitle>Order List</c.CartTitle>
             <CartDeliveryInfo />
             <div>      
-                { cart.map(item => <CartListItem {...item} removeFromCart={removeFromCart} />) }
+                { cart.map( (item, i) => <CartListItem key={item.name+"_"+i} {...item} removeFromCart={removeFromCart} />) }
             </div>
             <DeliveryItem />
             <div>
