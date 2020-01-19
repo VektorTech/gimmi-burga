@@ -12,7 +12,7 @@ import { BodyMain } from './components/bodyMain';
 import Signup from './pages/signup';
 import Signin from './pages/signin';
 import AddToCart from './pages/add-to-cart';
-import foodSearchList from './containers/foodSearchList';
+import FoodSearchList from './containers/foodSearchList';
 
 
 const BodyDiv = styled.div`
@@ -26,7 +26,7 @@ const BodyDiv = styled.div`
 const Body = () => <BodyDiv><BodyMain /><FoodCart /></BodyDiv>;
 const SearchView = () => (
     <BodyDiv>
-        <foodSearchList />
+        <FoodSearchList />
         <FoodCart />
     </BodyDiv>);
 

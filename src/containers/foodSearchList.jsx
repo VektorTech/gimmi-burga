@@ -15,11 +15,11 @@ const FoodList = ({products, getSearchList}) => {
     const history = useHistory();
     const query = history.location.search.split("=")[1];
     
-    useEffect(() => getSearchList(query), [getSearchList, query]);
+    useEffect(() => { getSearchList(query) }, [getSearchList, query]);
 
     return (
         <FoodListWrapper>
-            {products.length ? products.map( product => (
+            {products ? products.map( product => (
                 <FoodItem key={product._id} {...product} />
             )) : <p>Populating...</p>} 
         </FoodListWrapper>

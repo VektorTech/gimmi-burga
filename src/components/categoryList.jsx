@@ -11,7 +11,7 @@ export const CategoryList = () => {
             <c.CategoriesList>
             {listData.map((item, index) => { 
                 if( index >= page-6 && index < page ){
-                    return <c.CategoriesListItem><Link to={"category?type="+item.name}>{item.name}</Link></c.CategoriesListItem>    
+                    return <c.CategoriesListItem key={item.name}><Link to={"category?type="+item.name}>{item.name}</Link></c.CategoriesListItem>    
                 } return null;     
             })}
             </c.CategoriesList>
