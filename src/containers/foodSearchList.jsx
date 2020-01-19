@@ -19,9 +19,9 @@ const FoodList = ({products, getSearchList}) => {
 
     return (
         <FoodListWrapper>
-            {products ? products.map( product => (
+            {products.map( product => (
                 <FoodItem key={product._id} {...product} />
-            )) : <p>Populating...</p>} 
+            ))} 
         </FoodListWrapper>
     );
 };

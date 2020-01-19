@@ -23,10 +23,18 @@ const BodyDiv = styled.div`
     grid-template-rows: 1fr;
 `;
 
+
+const Wrapper = styled.div`
+    width: 100%;
+    max-height: calc(100vh - 4.5rem);
+    overflow-y: scroll;
+    padding: 2rem 0 0 10%;
+`;
+
 const Body = () => <BodyDiv><BodyMain /><FoodCart /></BodyDiv>;
 const SearchView = () => (
     <BodyDiv>
-        <FoodSearchList />
+        <Wrapper><FoodSearchList /></Wrapper>
         <FoodCart />
     </BodyDiv>);
 
