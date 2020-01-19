@@ -8,7 +8,7 @@ const Header = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         const query = document.getElementById("search").value;
-        history.push(`search?q=${query}`);
+        history.push(`/search?q=${query}`);
     } 
 
     return ( 
