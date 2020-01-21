@@ -21,7 +21,7 @@ const Signup = () => {
             body: `username=${document.getElementById('username').value}`+
                   `&address=${document.getElementById('address').value}`+
                   `&password=${document.getElementById('password').value}`
-        }).then().then( history.push('/signin') ).catch(console.log);
+        }).then( history.replace('/signin') ).catch(console.log);
     }
 
     return(

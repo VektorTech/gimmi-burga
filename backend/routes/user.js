@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 const UserModel = require('../models/user');
 
@@ -15,16 +16,31 @@ router.post('/signup', async (req, res) => {
     user.save().then( () => res.location('Success') ).catch(res.send);
 });
 
-router.post('/signin', async (req, res) => {
-    UserModel.findOne({ username: req.body.username }, async (err, user) =>{
-        if (err) res.send("err"+err);
-        // bcrypt.compare( req.body.password, user.password ).then((result) => {
-        //     if(result) res.send(user.username);
-        // });
-        if(await bcrypt.compare( req.body.password, user.password )){
-            res.send(user.username);
-        }
-    });
+router.post(
+    '/signin', 
+    (req, res, next) => {
+        passport.authenticate('local', (err, user, info) => { 
+        // successRedirect: '/',
+        // failureRedirect: '/login',
+        // failureFlash: true 
+
+        req.logIn(user, err => {
+            if (err) { return next(err); }
+            res.json(user);
+        });
+
+    })(req, res, next);
 });
-//use try catch for bcrypt
+
+const checkAuth = (req, res, next) => {
+    if(req.isAuthenticated()){next();} else console.log("Need Permission");
+}
+
+router.post(
+    '/signout', checkAuth,
+    (req, res, next) => {
+        req.logOut();
+        res.json({out: "OUT"});
+});
+
 module.exports = router;

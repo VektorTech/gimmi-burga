@@ -11,6 +11,14 @@ const Header = () => {
         history.push(`/search?q=${query}`);
     } 
 
+    const onSignout = (e) => {
+        e.preventDefault();
+        fetch("http://localhost:5000/signout", {
+            method: 'post',
+            credentials: "include"
+        }).then(res => res.json).then(console.log);
+    } 
+
     return ( 
     <c.HeaderWrapper>
         <c.HeaderContainer>
@@ -24,6 +32,11 @@ const Header = () => {
             <c.MenuContainer>
                 <c.List>
                     <c.ListInfo><Link to="signin">Ico</Link></c.ListInfo>
+                    <c.ListInfo>
+                        <form>
+                            <input type="submit" value="Signout" onClick={onSignout}/>
+                        </form>
+                    </c.ListInfo>
                     <c.ListInfo>Cart</c.ListInfo>
                 </c.List>
             </c.MenuContainer>

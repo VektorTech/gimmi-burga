@@ -13,11 +13,12 @@ const SignIn = () => {
         e.preventDefault();
         fetch('http://localhost:5000/signin', {
             method: 'post',
+            credentials: "include",
             headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
             body: `username=${document.getElementById('username').value}&password=${document.getElementById('password').value}`
-        }).then(res => res.text()).then(console.log);
+        }).then(res => res.json()).then(console.log);
     }
 
     return(
