@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { FoodItem } from '../components/foodListItem';
 import { useHistory } from 'react-router-dom';
-import { getSearchList } from '../redux/actions/product-actions';
+import { getSearchList } from '../redux/actions/product.actions';
 
 const FoodListWrapper = styled.div`
     display: flex;

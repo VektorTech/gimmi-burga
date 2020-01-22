@@ -5,11 +5,11 @@ const passport = require('passport');
 const UserModel = require('../models/user');
 
 router.post('/signup', async (req, res) => {
-    const hashedPW = await bcrypt.hash(req.body.password, 10);
+    const hashed_password = await bcrypt.hash(req.body.password, 10);
     const user = new UserModel({
         username: req.body.username,
         address: req.body.address,
-        password: hashedPW,
+        password: hashed_password,
         id: Date.now().toString()
     });
 
@@ -33,7 +33,9 @@ router.post(
 });
 
 const checkAuth = (req, res, next) => {
-    if(req.isAuthenticated()){next();} else console.log("Need Permission");
+    if(req.isAuthenticated()){
+        next();
+    } else console.log("Need Permission");
 }
 
 router.post(

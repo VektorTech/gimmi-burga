@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+
+import { setUser } from "../redux/actions/user.action";
 
 const Form = styled.div`
     width: 40%;
@@ -8,7 +11,8 @@ const Form = styled.div`
     margin: 0 auto;
 `;
 
-const SignIn = () => {
+const SignIn = ({setUser}) => {
+
     const onClickHandler = e => {
         e.preventDefault();
         fetch('http://localhost:5000/signin', {
@@ -18,7 +22,7 @@ const SignIn = () => {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
             body: `username=${document.getElementById('username').value}&password=${document.getElementById('password').value}`
-        }).then(res => res.json()).then(console.log);
+        }).then(res => res.json()).then(setUser);
     }
 
     return(
@@ -35,4 +39,4 @@ const SignIn = () => {
     );
 }
 
-export default SignIn;
+export default connect( null, dispatch => ({setUser: user => dispatch(setUser(user)) }) )(SignIn);

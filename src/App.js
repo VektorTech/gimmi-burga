@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { getAllProducts } from './redux/actions/product-actions';
+import { getAllProducts } from './redux/actions/product.actions';
 
 import Header from './containers/header';
 import FoodCart from './containers/foodCart';
