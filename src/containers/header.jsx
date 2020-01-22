@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import * as c from './header.styles';
+import {
+    HeaderWrapper,
+    HeaderContainer,
+    LogoContainer,
+    SearchContainer,
+    MenuContainer,
+    SearchInput,
+    List, ListInfo
+} from './header.styles';
 
 const Header = () => {
     const history = useHistory();
@@ -20,28 +28,28 @@ const Header = () => {
     } 
 
     return ( 
-    <c.HeaderWrapper>
-        <c.HeaderContainer>
-            <c.LogoContainer></c.LogoContainer>
-            <c.SearchContainer>
+    <HeaderWrapper>
+        <HeaderContainer>
+            <LogoContainer></LogoContainer>
+            <SearchContainer>
                 <form>
-                    <c.SearchInput placeholder="Search" id="search" /> 
+                    <SearchInput placeholder="Search" id="search" /> 
                     <input type="submit" onClick={onSubmitHandler} style={{"display":"none"}}/> 
                 </form>
-            </c.SearchContainer>
-            <c.MenuContainer>
-                <c.List>
-                    <c.ListInfo><Link to="signin">Ico</Link></c.ListInfo>
-                    <c.ListInfo>
+            </SearchContainer>
+            <MenuContainer>
+                <List>
+                    <ListInfo><Link to="signin">Ico</Link></ListInfo>
+                    <ListInfo>
                         <form>
                             <input type="submit" value="Signout" onClick={onSignout}/>
                         </form>
-                    </c.ListInfo>
-                    <c.ListInfo>Cart</c.ListInfo>
-                </c.List>
-            </c.MenuContainer>
-        </c.HeaderContainer>
-    </c.HeaderWrapper> 
+                    </ListInfo>
+                    <ListInfo>Cart</ListInfo>
+                </List>
+            </MenuContainer>
+        </HeaderContainer>
+    </HeaderWrapper> 
     );
 };
 

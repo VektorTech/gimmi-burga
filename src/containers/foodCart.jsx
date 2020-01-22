@@ -1,6 +1,13 @@
 import React from 'react';
-import * as c from './foodCart.styles';
 import { connect } from 'react-redux';
+
+import {
+    FoodCartWrapper,
+    CartTitle,
+    Total, TotalAmount,
+    ButtonWrapper,
+    CheckoutBtn
+} from './foodCart.styles';
 
 import { CartDeliveryInfo } from '../components/cartDeliveryInfo';
 import { CartListItem, DeliveryItem } from '../components/cartListItem';
@@ -9,21 +16,21 @@ import { removeFromCart } from '../redux/actions/cart.actions';
 
 const FoodCart = ({cart, removeFromCart}) => {
     return (
-        <c.FoodCartWrapper>
-            <c.CartTitle>Order List</c.CartTitle>
+        <FoodCartWrapper>
+            <CartTitle>Order List</CartTitle>
             <CartDeliveryInfo />
             <div>      
                 { cart.map( (item, i) => <CartListItem key={item.name+"_"+i} {...item} removeFromCart={removeFromCart} />) }
             </div>
             <DeliveryItem />
             <div>
-                <c.Total>Total:</c.Total>
-                <c.TotalAmount>$14.99</c.TotalAmount>
+                <Total>Total:</Total>
+                <TotalAmount>$14.99</TotalAmount>
             </div>
-            <c.ButtonWrapper>
-                <c.CheckoutBtn>Checkout</c.CheckoutBtn>
-            </c.ButtonWrapper>
-        </c.FoodCartWrapper>
+            <ButtonWrapper>
+                <CheckoutBtn>Checkout</CheckoutBtn>
+            </ButtonWrapper>
+        </FoodCartWrapper>
     );
 }
 

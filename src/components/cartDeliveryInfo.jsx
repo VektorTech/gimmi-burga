@@ -1,12 +1,15 @@
 import React from 'react';
-import * as c from './cartDeliveryInfo.styles';
+import {
+    Wrapper,
+    Span
+} from './cartDeliveryInfo.styles';
 
 export const CartDeliveryInfo = () => (
-    <c.Wrapper>
-        <c.Span>Address</c.Span>
-        <c.Span right>Edit</c.Span>
+    <Wrapper>
+        <Span>Address</Span>
+        <Span right>Edit</Span>
         <br />
-        <c.Span>35min</c.Span>
-        <c.Span right>Choose Time</c.Span>
-    </c.Wrapper>
+        <Span>35min</Span>
+        <Span right>Choose Time</Span>
+    </Wrapper>
 );
