@@ -4,9 +4,9 @@ import {
     Span
 } from './cartDeliveryInfo.styles';
 
-export const CartDeliveryInfo = () => (
+export const CartDeliveryInfo = ({address}) => (
     <Wrapper>
-        <Span>Address</Span>
+        <Span><input type="text" value={address} /></Span>
         <Span right>Edit</Span>
         <br />
         <Span>35min</Span>

@@ -8,7 +8,8 @@ const actions = {
     ADD_TO_CART: "ADD_TO_CART",
     REMOVE_FROM_CART: "REMOVE_FROM_CART",
     
-    SET_CUR_USER: "SET_CUR_USER"
+    SET_CUR_USER: "SET_CUR_USER",
+    SIGN_OUT_USER: "SIGN_OUT_USER"
 };
 
 export default actions;

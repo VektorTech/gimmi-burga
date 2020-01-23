@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import {
     CategoryWrapper,
     CategoriesList,
@@ -8,20 +8,20 @@ import {
 import listData from '../config/categories.json';
 
 export const CategoryList = () => {
-    const [page, nextPage] = useState(6);
-
+    const history = useHistory();
+    const current_category = decodeURI(history.location.search.split("=")[1]);
     return(
         <CategoryWrapper>
             <CategoriesList>
-            {listData.map((item, index) => { 
-                if( index >= page-6 && index < page ){
-                    return <CategoriesListItem key={item.name}><Link to={"/category?type="+item.name}>{item.name}</Link></CategoriesListItem>    
-                } return null;     
-            })}
+                <select defaultValue={current_category} onChange={(e) => history.push("/category?type="+e.target.value)}>
+                {listData.map((item, index) => { 
+                    return <option 
+                                key={item.name} 
+                                value={item.name}>{item.name}</option>
+                })}
+                </select>
+                <h1>{ current_category==="undefined" ? "All Meals" : current_category }</h1>
             </CategoriesList>
-            <div>
-            <button style={{marginLeft: 'auto'}} onClick={() => { page<=listData.length ? nextPage(page+6) : nextPage(6) }}>Next</button>
-            </div>
         </CategoryWrapper>
     );
 };

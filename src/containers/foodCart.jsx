@@ -6,7 +6,8 @@ import {
     CartTitle,
     Total, TotalAmount,
     ButtonWrapper,
-    CheckoutBtn
+    CheckoutBtn,
+    CartItemsContainer
 } from './foodCart.styles';
 
 import { CartDeliveryInfo } from '../components/cartDeliveryInfo';
@@ -14,14 +15,15 @@ import { CartListItem, DeliveryItem } from '../components/cartListItem';
 
 import { removeFromCart } from '../redux/actions/cart.actions';
 
-const FoodCart = ({cart, removeFromCart}) => {
+
+const FoodCart = ({cart, removeFromCart, current_user}) => {
     return (
         <FoodCartWrapper>
             <CartTitle>Order List</CartTitle>
-            <CartDeliveryInfo />
-            <div>      
+            <CartDeliveryInfo address={current_user.address} />
+                <CartItemsContainer>      
                 { cart.map( (item, i) => <CartListItem key={item.name+"_"+i} {...item} removeFromCart={removeFromCart} />) }
-            </div>
+                </CartItemsContainer>
             <DeliveryItem />
             <div>
                 <Total>Total:</Total>
@@ -35,5 +37,5 @@ const FoodCart = ({cart, removeFromCart}) => {
 }
 
 export default connect( 
-    ({cart}) => ({ cart: cart.cart }),
+    ({cart, user}) => ({ cart: cart.cart, current_user: user.current_user || "" }),
     (dispatch) => ({removeFromCart: (id) => dispatch(removeFromCart(id))}) )(FoodCart);

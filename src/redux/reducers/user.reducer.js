@@ -9,6 +9,9 @@ export default (state = INIT_STATE, action) => {
         case actionTypes.SET_CUR_USER: return {
             current_user: action.payload
         }
+        case actionTypes.SIGN_OUT_USER: return {
+            current_user: null
+        }
         default: return state
     };
 };

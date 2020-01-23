@@ -10,6 +10,11 @@ export const Total = styled.p`
     display:inline;
 `;
 
+export const CartItemsContainer = styled.div`
+    height: calc(60vh - 6rem);
+    overflow-y: scroll;
+`;
+
 export const TotalAmount = styled.h1`
     float: right;
 `;

@@ -26,6 +26,7 @@ router.post(
 
         req.logIn(user, err => {
             if (err) { return next(err); }
+            console.log("auth");
             res.json(user);
         });
 
@@ -37,6 +38,14 @@ const checkAuth = (req, res, next) => {
         next();
     } else console.log("Need Permission");
 }
+
+router.post('/favorite', checkAuth, (req, res, next) => {
+    console.log(req.user, req.body.id);
+});
+
+router.get('/favorite', checkAuth, (req, res, next) => {
+    console.log(req.user);
+});
 
 router.post(
     '/signout', checkAuth,
