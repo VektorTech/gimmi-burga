@@ -6,6 +6,7 @@ import {
 
 export const CartDeliveryInfo = ({address}) => {
     const [date, setDate] = useState("35mins");
+    const [time, setTime] = useState();
 
     return (
     <Wrapper>
@@ -15,7 +16,7 @@ export const CartDeliveryInfo = ({address}) => {
         <Span>Choose Time</Span>
 
         <div>
-        <select onChange={(e) => setDate(e.target.value)}>
+        <select value={date} onChange={(e) => setDate(e.target.value)}>
         {
             (() => {
                 const datesArr = [ 
@@ -35,7 +36,7 @@ export const CartDeliveryInfo = ({address}) => {
             })()
         }
         </select>
-        <select>
+        <select value={time} onChange={(e) => setTime(e.target.value)}>
         {
             (() => {
                 const getTimeList = (start=0, timesArr=[]) => {

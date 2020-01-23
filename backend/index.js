@@ -9,7 +9,7 @@ const userRoute = require('./routes/user');
 const productRoute = require('./routes/product');
 const searchRoute = require('./routes/search');
 
-mongoose.connect(process.env.DB_URI_STRING, {useNewUrlParser: true});
+mongoose.connect(process.env.DB_URI_STRING, {useNewUrlParser: true, useFindAndModify: false});
 
 const app = express();
 

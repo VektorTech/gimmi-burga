@@ -40,15 +40,23 @@ const checkAuth = (req, res, next) => {
 }
 
 router.post('/favorite', checkAuth, (req, res, next) => {
-    console.log(req.user, req.body.id);
+    UserModel.findByIdAndUpdate(
+        req.user[0]._id, 
+        { favorites: req.user[0].favorites.concat(req.body.id) },
+        (err, user) => {
+            if (err) return next(err);
+            console.log(user);
+        });
 });
 
 router.get('/favorite', checkAuth, (req, res, next) => {
-    console.log(req.user);
+    UserModel.findById(req.user[0]._id, (err, user) => {
+        res.json(user.favorites);
+    });
 });
 
 router.post(
-    '/signout', checkAuth,
+    '/signout',
     (req, res, next) => {
         req.logOut();
         res.json({out: "OUT"});

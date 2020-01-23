@@ -29,6 +29,12 @@ const Header = ({currentUser, SignOut}) => {
         }).then(res => res.json).then(SignOut);
     } 
 
+    const getFavorites = () => {
+        fetch("http://localhost:5000/favorite", {
+            credentials: "include"
+        }).then(res => res.json()).then(console.log);
+    }
+
     return ( 
     <HeaderWrapper>
         <HeaderContainer>
@@ -48,7 +54,7 @@ const Header = ({currentUser, SignOut}) => {
                                 <input type="submit" value="Sign Out" onClick={onSignout}/>
                             </form>
                         </ListInfo> 
-                        <ListInfo>{"<3"}</ListInfo>
+                        <ListInfo><button onClick={getFavorites}>{"<3"}</button></ListInfo>
                         </>
                         :
                         <ListInfo><Link to="signin">Sign In</Link></ListInfo>
