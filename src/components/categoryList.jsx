@@ -13,12 +13,16 @@ export const CategoryList = () => {
     return(
         <CategoryWrapper>
             <CategoriesList>
-                <select defaultValue={current_category} onChange={(e) => history.push("/category?type="+e.target.value)}>
-                {listData.map((item, index) => { 
-                    return <option key={item.name} value={item.name}>{item.name}</option>
-                })}
-                </select>
-                <h1>{ current_category==="undefined" ? "All" : current_category }</h1>
+                <CategoriesListItem>
+                    <select defaultValue={current_category} onChange={(e) => history.push("/category?type="+e.target.value)}>
+                    {listData.map((item, index) => { 
+                        return <option key={item.name} value={item.name}>{item.name}</option>
+                    })}
+                    </select>
+                </CategoriesListItem>
+                <CategoriesListItem>
+                    <h1>{ current_category==="undefined" ? "All" : current_category }</h1>
+                </CategoriesListItem>
             </CategoriesList>
         </CategoryWrapper>
     );

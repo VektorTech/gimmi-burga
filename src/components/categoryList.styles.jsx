@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const CategoryWrapper = styled.div`
     height: 5rem;
+    line-height: 5rem;
     display: flex;
     flex-direction:row;
 `;
@@ -14,5 +15,8 @@ export const CategoriesList = styled.ul`
 
 export const CategoriesListItem = styled.li`
     padding: 0 1rem;
-    display: inline;
+    display: inline-block;
+    &:last-child {
+        float: right;
+    }
 `;

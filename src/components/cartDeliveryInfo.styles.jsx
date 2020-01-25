@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     background-color: purple;
-    padding: 2rem;
+    padding: 5%;
 `;
 
 export const Span = styled.span`

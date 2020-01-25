@@ -7,11 +7,13 @@ import {
 export const CartDeliveryInfo = ({address}) => {
     const [date, setDate] = useState("35mins");
     const [time, setTime] = useState();
+    const [editing, toggleEdit] = useState(false);
+    const [addr, setAddr] = useState(address);
 
     return (
     <Wrapper>
-        <Span><input type="text" value={address} /></Span>
-        <Span right>Edit</Span>
+        <Span><input type="text" value={addr} readOnly={!editing} onChange={(e) => setAddr(e.target.value)} /></Span>
+        <Span right onClick={() => toggleEdit(!editing)}>{ editing ? "Save" : "Edit" }</Span>
         <br />
         <Span>Choose Time</Span>
 

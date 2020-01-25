@@ -12,8 +12,9 @@ import {
 } from './header.styles';
 import { signOut } from '../redux/actions/user.action';
 
-const Header = ({currentUser, SignOut}) => {
+const Header = ({currentUser, SignOut, cartSize}) => {
     const history = useHistory();
+    const [favList, setFav] = useState([]);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -32,7 +33,7 @@ const Header = ({currentUser, SignOut}) => {
     const getFavorites = () => {
         fetch("http://localhost:5000/favorite", {
             credentials: "include"
-        }).then(res => res.json()).then(console.log);
+        }).then(res => res.json()).then(setFav);
     }
 
     return ( 
@@ -55,10 +56,16 @@ const Header = ({currentUser, SignOut}) => {
                             </form>
                         </ListInfo> 
                         <ListInfo><button onClick={getFavorites}>{"<3"}</button></ListInfo>
+                        <select>
+                            {
+                                favList.map( elem => <option value={elem}>{elem}</option> )
+                            }
+                        </select>
                         </>
                         :
                         <ListInfo><Link to="signin">Sign In</Link></ListInfo>
-                 }            
+                 }     
+                    <ListInfo>{cartSize} Items</ListInfo>       
                 </List>
             </MenuContainer>
         </HeaderContainer>
@@ -68,7 +75,9 @@ const Header = ({currentUser, SignOut}) => {
 
 export default connect(
     state => ({
-        currentUser: state.user.current_user
+        currentUser: state.user.current_user,
+        cartSize: state.cart.cart.length,
+        products: state.product.all_products
     }), dispatch => ({
         SignOut: () => dispatch(signOut())
     }))(Header);

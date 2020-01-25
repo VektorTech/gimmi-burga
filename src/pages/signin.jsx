@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -12,6 +12,7 @@ const Form = styled.div`
 `;
 
 const SignIn = ({setUser}) => {
+    const history = useHistory();
 
     const onClickHandler = e => {
         e.preventDefault();
@@ -22,7 +23,10 @@ const SignIn = ({setUser}) => {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
             body: `username=${document.getElementById('username').value}&password=${document.getElementById('password').value}`
-        }).then(res => res.json()).then(setUser);
+        }).then(res => res.json()).then((res) => {
+                setUser(res);
+                history.replace('/');
+            });
     }
 
     return(

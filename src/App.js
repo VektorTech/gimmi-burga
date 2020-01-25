@@ -8,6 +8,7 @@ import Header from './containers/header';
 import FoodCart from './containers/foodCart';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { BodyMain } from './components/bodyMain';
+import Footer from './components/Footer';
 
 import Signup from './pages/signup';
 import Signin from './pages/signin';
@@ -16,11 +17,13 @@ import FoodSearchList from './containers/foodSearchList';
 
 
 const BodyDiv = styled.div`
-    width: 100%;
+    max-width: 92%;
+    margin: 0 4%;
     height: 100%;
     display: grid;
     grid-template-columns: 70% 1fr;
     grid-template-rows: 1fr;
+    grid-gap: 0 2.5%;
 `;
 
 
@@ -32,6 +35,7 @@ const Wrapper = styled.div`
 `;
 
 const Body = () => <BodyDiv><BodyMain /><FoodCart /></BodyDiv>;
+
 const SearchView = () => (
     <BodyDiv>
         <Wrapper><FoodSearchList /></Wrapper>
@@ -60,6 +64,7 @@ class App extends Component {
                     <Route path="/signin" component={Signin}/>
                     <Route path="/signup" component={Signup}/>
                 </Switch>
+                <Footer />
                 </BrowserRouter>
             </> 
         );
