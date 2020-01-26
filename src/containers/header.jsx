@@ -12,9 +12,10 @@ import {
 } from './header.styles';
 import { signOut } from '../redux/actions/user.action';
 
-const Header = ({currentUser, SignOut, cartSize}) => {
+const Header = ({currentUser, SignOut, cartSize, products}) => {
     const history = useHistory();
     const [favList, setFav] = useState([]);
+    const [searchVal, setSearchVal] = useState("");
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -42,7 +43,23 @@ const Header = ({currentUser, SignOut, cartSize}) => {
             <LogoContainer><Link to='/'>LOGO</Link></LogoContainer>
             <SearchContainer>
                 <form>
-                    <SearchInput placeholder="Search" id="search" /> 
+                    <SearchInput 
+                        placeholder="Search" 
+                        id="search" 
+                        list="meals" 
+                        value={searchVal} 
+                        onChange={(e) => setSearchVal(e.target.value.trim())} />
+                        
+                    <datalist id="meals">
+                        { products.map( (acc => meal => {
+                            const search = new RegExp(searchVal, 'i');
+                            if(search.test(meal.name) && acc < 7){
+                                acc += 1;
+                                return <option value={meal.name} />;
+                            }
+                        })(0)) }
+                    </datalist> 
+
                     <input type="submit" onClick={onSubmitHandler} style={{"display":"none"}}/> 
                 </form>
             </SearchContainer>
@@ -56,11 +73,6 @@ const Header = ({currentUser, SignOut, cartSize}) => {
                             </form>
                         </ListInfo> 
                         <ListInfo><button onClick={getFavorites}>{"<3"}</button></ListInfo>
-                        <select>
-                            {
-                                favList.map( elem => <option value={elem}>{elem}</option> )
-                            }
-                        </select>
                         </>
                         :
                         <ListInfo><Link to="signin">Sign In</Link></ListInfo>
