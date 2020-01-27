@@ -42,7 +42,7 @@ const checkAuth = (req, res, next) => {
 router.post('/favorite', checkAuth, (req, res, next) => {
     UserModel.findByIdAndUpdate(
         req.user[0]._id, 
-        { favorites: req.user[0].favorites.concat(req.body.id) },
+        { favorites: [req.body.id] },
         (err, user) => {
             if (err) return next(err);
             console.log(user);

@@ -16,18 +16,19 @@ import { CartListItem, DeliveryItem } from '../components/cartListItem';
 import { removeFromCart } from '../redux/actions/cart.actions';
 
 
-const FoodCart = ({cart, removeFromCart, current_user}) => {
+const FoodCart = ({cart, removeFromCart, current_user, amount}) => {
     return (
         <FoodCartWrapper>
             <CartTitle>Order List</CartTitle>
             <CartDeliveryInfo address={current_user.address} />
                 <CartItemsContainer>      
-                { cart.map( (item, i) => <CartListItem key={item.name+"_"+i} {...item} removeFromCart={removeFromCart} />) }
+                { cart.map( (item, i) => <CartListItem key={item._id} {...item} removeFromCart={removeFromCart} />) }
                 </CartItemsContainer>
             <DeliveryItem />
             <div>
                 <Total>Total:</Total>
-                <TotalAmount>$14.99</TotalAmount>
+                <TotalAmount>${ cart.length ? Number(cart.map( ({price, amount}) => amount * price.replace('$', '') )
+                                   .reduce((prev, curr) => prev + curr) + 4.99).toFixed(2): "0.00" }</TotalAmount>
             </div>
             <ButtonWrapper>
                 <CheckoutBtn>Checkout</CheckoutBtn>
@@ -39,3 +40,5 @@ const FoodCart = ({cart, removeFromCart, current_user}) => {
 export default connect( 
     ({cart, user}) => ({ cart: cart.cart, current_user: user.current_user || "" }),
     (dispatch) => ({removeFromCart: (id) => dispatch(removeFromCart(id))}) )(FoodCart);
+
+    //make total calc more efficient using state

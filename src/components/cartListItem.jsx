@@ -11,7 +11,7 @@ export const CartListItem = ({price, amount, name, removeFromCart, _id}) => (
         <Span>{amount}</Span>
         <Span>X</Span>
         <Span>{name}</Span>
-        <Span right>{price}</Span>
+        <Span right>${price.replace('$', '')*amount}</Span>
     </ItemWrapper>
 );
 

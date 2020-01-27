@@ -10,7 +10,7 @@ import {
 export const FoodItem = ({name, _id, price, imgLow}) => {
 
     const addFavorite = (e) => {
-        e.preventDefault();//stopPropagation won't work here
+        e.preventDefault();//stopPropagation not working here
         fetch("http://localhost:5000/favorite", {
             method: "post",
             credentials: "include",

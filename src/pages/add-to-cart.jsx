@@ -8,7 +8,7 @@ const AddToCart = ({ addToCart, products }) => {
     const { foodID } = useParams();
     const history = useHistory()
 
-    const product = products.filter( (product) => product._id === foodID)[0];
+    const product = products[foodID];
 
     const onContrlHander = (e, incr) => {
         e.preventDefault();

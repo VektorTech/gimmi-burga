@@ -12,8 +12,8 @@ const FoodListWrapper = styled.div`
 
 const FoodList = ({products}) => (
     <FoodListWrapper>
-        {products.length ? products.map( product => (
-            <FoodItem key={product._id} {...product} />
+        {Object.keys(products).length ? Object.keys(products).map( id => (
+            <FoodItem key={id} {...products[id]} />
         )) : <p>Populating...</p>} 
     </FoodListWrapper>
 );

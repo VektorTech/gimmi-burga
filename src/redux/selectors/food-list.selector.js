@@ -6,5 +6,10 @@ const getCatName = (_, cat_name) => decodeURI(cat_name);
 export const getFoodList = createSelector( 
     [getProducts, getCatName],
     (products, cat_name) => {
-    return cat_name!=='undefined' && cat_name!=="All" ? products.filter( (product) => product.category === cat_name ) : products;
+    return ((acc) => {
+        if(cat_name !=='undefined' && cat_name!=="All") {
+            Object.keys(products).forEach( id => products[id].category === cat_name ? acc[id] = products[id] : null );
+            return acc;
+        } else return products;
+    })({})
 });

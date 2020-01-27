@@ -46,16 +46,15 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                     <SearchInput 
                         placeholder="Search" 
                         id="search" 
-                        list="meals" 
-                        value={searchVal} 
+                        list="meals"  
                         onChange={(e) => setSearchVal(e.target.value.trim())} />
                         
                     <datalist id="meals">
-                        { products.map( (acc => meal => {
-                            const search = new RegExp(searchVal, 'i');
-                            if(search.test(meal.name) && acc < 7){
+                        { Object.keys(products).map( (acc => name => {
+                            const search = new RegExp(searchVal.replace(/[^a-zA-Z ]/g, ''), 'i');
+                            if(search.test(name) && acc < 7){
                                 acc += 1;
-                                return <option value={meal.name} />;
+                                return <option value={name} />;
                             }
                         })(0)) }
                     </datalist> 

@@ -46,7 +46,7 @@ const AddItemView = () => <BodyDiv><AddToCart /><FoodCart /></BodyDiv>;
 
 class App extends Component {
     componentDidMount(){
-        if(this.props.products.length === 0){
+        if(Object.keys(this.props.products).length === 0){
             this.props.getAllProducts();
         }
     }
