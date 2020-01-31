@@ -8,7 +8,8 @@ import {
     SearchContainer,
     MenuContainer,
     SearchInput,
-    List, ListInfo
+    List, ListInfo,
+    FavModal
 } from './header.styles';
 import { signOut } from '../redux/actions/user.action';
 
@@ -16,6 +17,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
     const history = useHistory();
     const [favList, setFav] = useState([]);
     const [searchVal, setSearchVal] = useState("");
+    const [modalView, toggleModal] = useState(true);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -34,11 +36,20 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
     const getFavorites = () => {
         fetch("http://localhost:5000/favorite", {
             credentials: "include"
-        }).then(res => res.json()).then(setFav);
+        }).then(res => res.json()).then( res => {
+            setFav(res);
+            toggleModal(false);
+        });
     }
 
     return ( 
     <HeaderWrapper>
+
+        <FavModal hidden={modalView}>
+            <button onClick={() => toggleModal(true)} >close</button>
+            {favList.map( id => products[id].name )}
+        </FavModal>
+
         <HeaderContainer>
             <LogoContainer><Link to='/'>LOGO</Link></LogoContainer>
             <SearchContainer>
@@ -50,11 +61,11 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                         onChange={(e) => setSearchVal(e.target.value.trim())} />
                         
                     <datalist id="meals">
-                        { Object.keys(products).map( (acc => name => {
+                        { Object.keys(products).map( (acc => id => {
                             const search = new RegExp(searchVal.replace(/[^a-zA-Z ]/g, ''), 'i');
-                            if(search.test(name) && acc < 7){
+                            if(search.test(products[id].name) && acc <= 6){
                                 acc += 1;
-                                return <option value={name} />;
+                                return <option value={products[id].name} />;
                             }
                         })(0)) }
                     </datalist> 

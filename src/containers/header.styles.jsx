@@ -38,3 +38,13 @@ export const ListInfo = styled.li`
         padding-right: 1rem;
     }
 `;
+
+export const FavModal = styled.div`
+    position: absolute;
+    display: ${ props => props.hidden ? 'none' : 'inline' };
+    width: 60vw;
+    height: 60vh;
+    margin: 20vh 20vw;
+    border: 2px solid yellow;
+    background-color: white;
+`;
