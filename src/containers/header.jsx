@@ -9,7 +9,8 @@ import {
     MenuContainer,
     SearchInput,
     List, ListInfo,
-    FavModal
+    FavModal,
+    ModalBackdrop
 } from './header.styles';
 import { signOut } from '../redux/actions/user.action';
 
@@ -45,10 +46,12 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
     return ( 
     <HeaderWrapper>
 
-        <FavModal hidden={modalView}>
-            <button onClick={() => toggleModal(true)} >close</button>
+        <ModalBackdrop onClick={() => toggleModal(true)} hidden={modalView}>
+            <FavModal onClick={e => e.stopPropagation()}>
+            <button onClick={() => toggleModal(true)}>close</button>
             {favList.map( id => products[id].name )}
-        </FavModal>
+            </FavModal>
+        </ModalBackdrop>
 
         <HeaderContainer>
             <LogoContainer><Link to='/'>LOGO</Link></LogoContainer>

@@ -40,11 +40,19 @@ export const ListInfo = styled.li`
 `;
 
 export const FavModal = styled.div`
-    position: absolute;
+    z-index: 1001;
+    width: 80%;
+    height: 90vh;
+    margin: 5vh 10%;
+    box-shadow: 0 0 20px 1px #666;
+`;
+
+export const ModalBackdrop = styled.div`
+    content: '';
+    position: fixed;
+    z-index: 1000;
     display: ${ props => props.hidden ? 'none' : 'inline' };
-    width: 60vw;
-    height: 60vh;
-    margin: 20vh 20vw;
-    border: 2px solid yellow;
+    width: 100vw;
+    height: 100vh;
     background-color: white;
 `;
