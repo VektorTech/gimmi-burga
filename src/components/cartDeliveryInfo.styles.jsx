@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    background-color: purple;
+    background-color: #633ac9;
+    line-height: 1.5rem;
+    border-radius: 1rem;
     padding: 5%;
 `;
 

@@ -4,7 +4,9 @@ export const FoodCartWrapper = styled.div`
     /* margin-right: 10%; */
 `;
 
-export const CartTitle = styled.h1``;
+export const CartTitle = styled.h1`
+    margin-bottom: 1rem;
+`;
 
 export const Total = styled.p`
     display:inline;
@@ -29,4 +31,8 @@ export const CheckoutBtn = styled.button`
     right: 0;
     margin-top: 3rem;
     width: 15%;
+    height: 3rem;
+    border: none;
+    border-radius: 1rem 0 0 1rem;
+    background-color: #e6c212;
 `;
