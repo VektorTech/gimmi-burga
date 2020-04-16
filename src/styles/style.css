@@ -2,16 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    list-style: none;
 }
 
 body {
+    /* background-color: #eee; */
     font-size: 10px;
-}
-
-ul {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
 }

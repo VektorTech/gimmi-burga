@@ -7,7 +7,7 @@ import {
     ItemPrice
 } from './foodListItem.styles';
 
-export const FoodItem = ({name, _id, price, imgLow}) => {
+export const FoodItem = ({name, _id, price, imgLow, category}) => {
 
     const addFavorite = (e) => {
         e.preventDefault();//stopPropagation not working here
@@ -26,10 +26,11 @@ export const FoodItem = ({name, _id, price, imgLow}) => {
             <Anchor to={'add-to-cart/'+_id}>
                 <ItemImage>
                     <ItemImg src={imgLow} alt={name} />
-                    <button onClick={addFavorite}>{"<3"}</button>
                 </ItemImage>
                 <ItemTitle>{name}</ItemTitle>
-                <ItemPrice>{price}</ItemPrice>
+                <ItemPrice>
+                    <span>{category}</span> {price}
+                </ItemPrice>
             </Anchor>
         </FoodItemWrapper>
     );

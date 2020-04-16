@@ -24,6 +24,10 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input`
     width: 100%;
     height: 2.1rem;
+    border-radius: .2rem;
+    padding: 0 1rem;
+    border:none;
+    background-color: #f7f7f7;
 `;
 
 export const MenuContainer = styled.div``;
