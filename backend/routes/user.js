@@ -26,7 +26,6 @@ router.post(
 
         req.logIn(user, err => {
             if (err) { return next(err); }
-            console.log("auth");
             res.json(user);
         });
 
@@ -45,7 +44,8 @@ router.post('/favorite', checkAuth, (req, res, next) => {
         { $addToSet: { favorites: req.body.id } },
         (err, user) => {
             if (err) return next(err);
-            // console.log(user);
+            res.status(200);
+            res.end();
         });
 });
 
@@ -59,7 +59,7 @@ router.post(
     '/signout',
     (req, res, next) => {
         req.logOut();
-        res.json({out: "OUT"});
+        res.end();
 });
 
 module.exports = router;

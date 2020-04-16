@@ -68,7 +68,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                             const search = new RegExp(searchVal.replace(/[^a-zA-Z ]/g, ''), 'i');
                             if(search.test(products[id].name) && acc <= 6){
                                 acc += 1;
-                                return <option value={products[id].name} />;
+                                return <option key={id} value={products[id].name} />;
                             }
                         })(0)) }
                     </datalist> 

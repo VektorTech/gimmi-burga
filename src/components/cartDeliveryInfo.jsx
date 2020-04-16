@@ -22,8 +22,8 @@ export const CartDeliveryInfo = ({address}) => {
         {
             (() => {
                 const datesArr = [ 
-                    <option>{"35mins"}</option>,
-                    <option>{"Today"}</option> 
+                    <option key={"35"}>{"35mins"}</option>,
+                    <option key={"today"}>{"Today"}</option> 
                 ];
                 for(let i=1;i<=7;i++){
                     const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };

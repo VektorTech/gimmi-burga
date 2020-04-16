@@ -15,7 +15,7 @@ const FoodList = ({products, getSearchList}) => {
     const history = useHistory();
     const query = history.location.search.split("=")[1];
     
-    useEffect(() => { getSearchList(query) }, [query]);
+    useEffect(() => { getSearchList(query) });
 
     return (
         <FoodListWrapper>

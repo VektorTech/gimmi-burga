@@ -13,7 +13,7 @@ const products = mongoose.model('products', {
 });
 
 const prods = require('./products.json');
-prods.map( (elem) => { 
+prods.forEach(elem => { 
     const prod = new products(elem);
     prod.save();
 });
