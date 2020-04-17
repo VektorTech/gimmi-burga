@@ -1,13 +1,13 @@
 import React from 'react';
 import {
     ItemWrapper,
-    Span,
+    Span, Remove,
     ItemImage
 } from './cartListItem.styles';
 
 export const CartListItem = ({price, amount, name, removeFromCart, _id}) => (
     <ItemWrapper>
-        <button onClick={() => removeFromCart(_id)} >Remove</button>
+        <Remove onClick={() => removeFromCart(_id)} >x</Remove>
         <Span>{amount}</Span>
         <Span>X</Span>
         <Span>{name}</Span>
