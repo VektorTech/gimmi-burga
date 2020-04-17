@@ -4,6 +4,11 @@ import { useParams, useHistory } from 'react-router-dom';
 
 import { addToCart } from '../redux/actions/cart.actions';
 
+import {
+    Name, Description, TextArea,
+    BtnControl, Submit, Form, Amount
+} from './add-to-cart.style';
+
 const AddToCart = ({ addToCart, products }) => {
     const { foodID } = useParams();
     const history = useHistory()
@@ -29,20 +34,22 @@ const AddToCart = ({ addToCart, products }) => {
     }
 
     return (
-        <form>
-            <h1>{product.name}</h1>
-            <p>{product.description}</p>
+        <Form>
+            <form action="">
+            <Name>{product.name}</Name>
+            <Description>{product.description}</Description>
             <br/>
             <label>Additional Details</label>
             <br/>
-            <textarea></textarea>
+            <TextArea></TextArea>
             <br/>
-            <button onClick={(e) => onContrlHander(e)}>-</button>
-                <input type="text" id="amount" value="1" readOnly />
-            <button onClick={(e) => onContrlHander(e, true)}>+</button>
+            <BtnControl onClick={(e) => onContrlHander(e)}>-</BtnControl>
+                <Amount type="text" id="amount" value="1" readOnly />
+            <BtnControl onClick={(e) => onContrlHander(e, true)}>+</BtnControl>
             <br/>
-            <input type='submit' value='Add To Cart' onClick={(e) => onSubmitHandler(e)} />
-        </form>
+            <Submit type='submit' value='Add To Cart' onClick={(e) => onSubmitHandler(e)} />
+            </form>
+        </Form>
     );
 }
 
