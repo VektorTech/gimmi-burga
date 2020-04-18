@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {
     Wrapper,
-    Span
+    Span,
+    AddressInput
 } from './cartDeliveryInfo.styles';
 
 export const CartDeliveryInfo = ({address}) => {
@@ -12,13 +13,20 @@ export const CartDeliveryInfo = ({address}) => {
 
     return (
     <Wrapper>
-        <Span><input type="text" value={addr} readOnly={!editing} onChange={(e) => setAddr(e.target.value)} /></Span>
+        <Span>
+            <AddressInput 
+                placeholder="Address" 
+                type="text" 
+                value={addr} 
+                readOnly={!editing} 
+                onChange={(e) => setAddr(e.target.value)}/>
+        </Span>
         <Span right onClick={() => toggleEdit(!editing)}>{ editing ? "Save" : "Edit" }</Span>
         <br />
         <Span>Choose Time</Span>
 
         <div>
-        <select value={date} onChange={(e) => setDate(e.target.value)}>
+        <select style={{width:'50%'}} value={date} onChange={(e) => setDate(e.target.value)}>
         {
             (() => {
                 const datesArr = [ 
@@ -38,7 +46,7 @@ export const CartDeliveryInfo = ({address}) => {
             })()
         }
         </select>
-        <select value={time} onChange={(e) => setTime(e.target.value)}>
+        <select style={{width:'50%'}} value={time} onChange={(e) => setTime(e.target.value)}>
         {
             (() => {
                 const getTimeList = (start=0, timesArr=[]) => {

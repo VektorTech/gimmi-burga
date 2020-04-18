@@ -9,11 +9,12 @@ export const CartTitle = styled.h1`
 `;
 
 export const Total = styled.p`
+    font-size: 1rem;
     display:inline;
 `;
 
 export const CartItemsContainer = styled.div`
-    height: calc(60vh - 6rem);
+    height: calc(60vh - 10rem);
     overflow-y: scroll;
 `;
 
@@ -24,12 +25,12 @@ export const TotalAmount = styled.h1`
 export const ButtonWrapper = styled.div`
     width: 100%;
     height: 2rem;
+    margin-top: 2.5rem;
 `;
 
 export const CheckoutBtn = styled.button`
     position: absolute;
     right: 0;
-    margin-top: 3rem;
     width: 15%;
     height: 3rem;
     border: none;

@@ -7,11 +7,6 @@ export const ItemWrapper = styled.div`
     white-space: nowrap;
 `;
 
-export const ItemImage = styled.img`
-    display: inline-block;
-    width: 3rem;
-`;
-
 export const Remove = styled.button`
     width: 1rem;
     height: 1rem;
@@ -28,9 +23,19 @@ export const Span = styled.span`
     margin-right: .5rem;
     overflow: hidden;
     text-overflow: ellipsis;
-    ${(props) => props.right ? "float:right;" : ""}
+    vertical-align: middle;
+
+    &:nth-of-type(1){
+        width: 1rem;
+    }
 
     &:nth-of-type(3){
-        width: 55%;
+        width: 50%;
+        font-weight: bold;
+        white-space: normal;
+    }
+
+    &:nth-of-type(4){
+        color: #555;
     }
 `;

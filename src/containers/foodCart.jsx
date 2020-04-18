@@ -23,9 +23,9 @@ const FoodCart = ({cart, removeFromCart, current_user, amount}) => {
             <CartDeliveryInfo address={current_user.address} />
                 <CartItemsContainer>      
                 { cart.map( (item, i) => <CartListItem key={item._id} {...item} removeFromCart={removeFromCart} />) }
+                <DeliveryItem />
                 </CartItemsContainer>
-            <DeliveryItem />
-            <div>
+            <div style={{marginTop:'2.5rem'}}>
                 <Total>Total:</Total>
                 <TotalAmount>${ cart.length ? Number(cart.map( ({price, amount}) => amount * price.replace('$', '') )
                                    .reduce((prev, curr) => prev + curr) + 4.99).toFixed(2): "0.00" }</TotalAmount>

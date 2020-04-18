@@ -2,7 +2,6 @@ import React from 'react';
 import {
     ItemWrapper,
     Span, Remove,
-    ItemImage
 } from './cartListItem.styles';
 
 export const CartListItem = ({price, amount, name, removeFromCart, _id}) => (
@@ -11,13 +10,15 @@ export const CartListItem = ({price, amount, name, removeFromCart, _id}) => (
         <Span>{amount}</Span>
         <Span>X</Span>
         <Span>{name}</Span>
-        <Span right>${price.replace('$', '')*amount}</Span>
+        <Span>${price.replace('$', '')*amount}</Span>
     </ItemWrapper>
 );
 
 export const DeliveryItem = () => (
     <ItemWrapper>
-        <ItemImage alt="" />
+        <Remove>x</Remove>
+        <Span>1</Span>
+        <Span>X</Span>
         <Span>Delivery</Span>
         <Span right>$4.99</Span>
     </ItemWrapper>
