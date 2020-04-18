@@ -16,7 +16,7 @@ import { signOut } from '../redux/actions/user.action';
 
 const Header = ({currentUser, SignOut, cartSize, products}) => {
     const history = useHistory();
-    const [favList, setFav] = useState([]);
+    // const [favList, setFav] = useState([]);
     const [searchVal, setSearchVal] = useState("");
     const [modalView, toggleModal] = useState(true);
 
@@ -46,12 +46,12 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
     return ( 
     <HeaderWrapper>
 
-        <ModalBackdrop onClick={() => toggleModal(true)} hidden={modalView}>
+        {/* <ModalBackdrop onClick={() => toggleModal(true)} hidden={modalView}>
             <FavModal onClick={e => e.stopPropagation()}>
             <button onClick={() => toggleModal(true)}>close</button>
             {favList.map( id => products[id].name )}
             </FavModal>
-        </ModalBackdrop>
+        </ModalBackdrop> */}
 
         <HeaderContainer>
             <LogoContainer><Link to='/'>LOGO</Link></LogoContainer>
@@ -90,7 +90,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                         :
                         <ListInfo><Link to="signin">Sign In</Link></ListInfo>
                     } */}
-                    <ListInfo>{cartSize} Items</ListInfo>       
+                    <ListInfo>{cartSize}</ListInfo>       
                 </List>
             </MenuContainer>
         </HeaderContainer>

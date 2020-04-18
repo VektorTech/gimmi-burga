@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FoodCartWrapper = styled.div`
-    /* margin-right: 10%; */
+    padding-left: 1rem;
 `;
 
 export const CartTitle = styled.h1`

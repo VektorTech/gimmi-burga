@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
 export const FoodItemWrapper = styled.div`
-    width: 30%;
+    width: 31.2%;
+    min-width: 12rem;
     height: 10rem;
     margin: .7rem 1%;
     white-space: nowrap;
@@ -13,13 +14,26 @@ export const ItemImage = styled.div`
     width: 100%;
     height: 60%;
     border-radius: 1rem;
-    background-color: #eee;
+    background: url(${props => props.image}) center;
     text-align: center;
+
+    &::before {
+        content: '';
+        top:0;left:0;
+        display: block;
+        border-radius: 1rem;
+        width: 100%;
+        height: 100%;
+        background: rgba(240,240,240,.75);
+    }
 `;
 
 export const ItemImg = styled.img`
+    margin-top: -100%;
+    margin-bottom: .6rem;
     max-width: 100%;
     max-height: 100%;
+    border-radius: 50%;
 `;
 
 export const ItemTitle = styled.div`
@@ -42,6 +56,7 @@ export const ItemPrice = styled.div`
     
     span {
         margin-right: .5rem;
+        color: #777;
     }
 `;
 

@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
-    width: 90%;
+    width: 92%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -18,7 +18,7 @@ export const HeaderContainer = styled.div`
 export const LogoContainer = styled.div``;
 
 export const SearchContainer = styled.div`
-    width: 45%;
+    width: 40.5%;
 `;
 
 export const SearchInput = styled.input`
@@ -38,6 +38,12 @@ export const List = styled.ul``;
 export const ListInfo = styled.li`
     float: right;
     font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: .7rem;
+    background-color: #e6c212;
     text-transform: uppercase;
 `;
 

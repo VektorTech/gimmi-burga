@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { setCartAddress } from "../redux/actions/cart.actions";
 import {
     Wrapper,
     Span,
     AddressInput
 } from './cartDeliveryInfo.styles';
 
-export const CartDeliveryInfo = ({address}) => {
+const CartDeliveryInfo = ({address, setCartAddress}) => {
     const [date, setDate] = useState("35mins");
     const [time, setTime] = useState();
     const [editing, toggleEdit] = useState(false);
-    const [addr, setAddr] = useState(address);
 
     return (
     <Wrapper>
         <Span>
-            <AddressInput 
+            <AddressInput
+                id="addrInput" 
                 placeholder="Address" 
                 type="text" 
-                value={addr} 
+                value={address} 
                 readOnly={!editing} 
-                onChange={(e) => setAddr(e.target.value)}/>
+                onChange={(e) => setCartAddress(e.target.value)}/>
         </Span>
-        <Span right onClick={() => toggleEdit(!editing)}>{ editing ? "Save" : "Edit" }</Span>
+        <Span right onClick={ () => {
+            document.getElementById('addrInput').focus();
+            toggleEdit(!editing); } }>{ editing ? "Save" : "Edit" }</Span>
         <br />
         <Span>Choose Time</Span>
 
@@ -70,4 +74,9 @@ export const CartDeliveryInfo = ({address}) => {
         </select>
         </div>
     </Wrapper>);
-}
+};
+
+export default connect(
+    ({cart}) => ({address: cart.address}), 
+    dispatch=>({setCartAddress:address=>dispatch(setCartAddress(address))})
+)(CartDeliveryInfo);
