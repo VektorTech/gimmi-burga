@@ -14,7 +14,7 @@ export const AddressInput = styled.input`
     border: none;
     width: 85%;
     height: 1.5rem;
-    padding-left: 1rem;
+    padding-left: .5rem;
 
     &:read-only {
         color: #d0bdff;

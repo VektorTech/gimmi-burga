@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     max-height: calc(100vh - 4.5rem);
     overflow-y: scroll;
     /* padding-left: 5%; */
-    padding-top: 2rem;
+    padding-top: 1rem;
 `;
 
 export const BodyMain = () => {

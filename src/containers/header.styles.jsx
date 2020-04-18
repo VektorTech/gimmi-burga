@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
-    width: 80%;
+    width: 90%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -18,7 +18,7 @@ export const HeaderContainer = styled.div`
 export const LogoContainer = styled.div``;
 
 export const SearchContainer = styled.div`
-    width: 50%;
+    width: 45%;
 `;
 
 export const SearchInput = styled.input`
@@ -36,11 +36,9 @@ export const MenuContainer = styled.div``;
 export const List = styled.ul``;
 
 export const ListInfo = styled.li`
-    display: inline;
-    
-    &:first-child {
-        padding-right: 1rem;
-    }
+    float: right;
+    font-size: 1rem;
+    text-transform: uppercase;
 `;
 
 export const FavModal = styled.div`

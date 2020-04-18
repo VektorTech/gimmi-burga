@@ -26,22 +26,22 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
         history.push(`/search?q=${query}`);
     } 
 
-    const onSignout = (e) => {
-        e.preventDefault();
-        fetch("http://localhost:5000/signout", {
-            method: 'post',
-            credentials: "include"
-        }).then(res => res.json).then(SignOut);
-    } 
+    // const onSignout = (e) => {
+    //     e.preventDefault();
+    //     fetch("http://localhost:5000/signout", {
+    //         method: 'post',
+    //         credentials: "include"
+    //     }).then(res => res.json).then(SignOut);
+    // } 
 
-    const getFavorites = () => {
-        fetch("http://localhost:5000/favorite", {
-            credentials: "include"
-        }).then(res => res.json()).then( res => {
-            setFav(res);
-            toggleModal(false);
-        });
-    }
+    // const getFavorites = () => {
+    //     fetch("http://localhost:5000/favorite", {
+    //         credentials: "include"
+    //     }).then(res => res.json()).then( res => {
+    //         setFav(res);
+    //         toggleModal(false);
+    //     });
+    // }
 
     return ( 
     <HeaderWrapper>
@@ -78,7 +78,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
             </SearchContainer>
             <MenuContainer>
                 <List>
-                    { currentUser ?
+                    {/* { currentUser ?
                         <>
                         <ListInfo>
                             <form>
@@ -89,7 +89,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                         </>
                         :
                         <ListInfo><Link to="signin">Sign In</Link></ListInfo>
-                 }     
+                    } */}
                     <ListInfo>{cartSize} Items</ListInfo>       
                 </List>
             </MenuContainer>
