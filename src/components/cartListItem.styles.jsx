@@ -8,13 +8,10 @@ export const ItemWrapper = styled.div`
 `;
 
 export const Remove = styled.button`
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
+    vertical-align: middle;
     text-align: center;
-    color: #f01843;
     background: transparent;
-    border: .15rem solid #f01843;
+    border: none;
     margin-right: .5rem;
 `;
 
@@ -30,7 +27,7 @@ export const Span = styled.span`
     }
 
     &:nth-of-type(3){
-        width: 50%;
+        width: 60%;
         font-weight: bold;
         white-space: normal;
     }

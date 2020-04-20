@@ -16,9 +16,15 @@ export const HeaderContainer = styled.div`
 `;
 
 export const LogoContainer = styled.div``;
+export const LogoImg = styled.img`
+    /* width: 8rem; */
+    width: 35%;
+    margin-left: .5rem;
+`;
 
 export const SearchContainer = styled.div`
-    width: 40.5%;
+    margin-left: -37%;
+    width: 47%;
 `;
 
 export const SearchInput = styled.input`
@@ -34,18 +40,6 @@ export const MenuContainer = styled.div``;
 
 
 export const List = styled.ul``;
-
-export const ListInfo = styled.li`
-    float: right;
-    font-size: 1rem;
-    width: 2rem;
-    height: 2rem;
-    line-height: 2rem;
-    text-align: center;
-    border-radius: .7rem;
-    background-color: #e6c212;
-    text-transform: uppercase;
-`;
 
 export const FavModal = styled.div`
     z-index: 1001;

@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 import { getSearchList } from '../redux/actions/product.actions';
 
 const FoodListWrapper = styled.div`
+    max-height: calc(100vh - 4.5rem);
+    overflow-y: scroll;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

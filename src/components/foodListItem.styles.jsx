@@ -14,8 +14,14 @@ export const ItemImage = styled.div`
     width: 100%;
     height: 60%;
     border-radius: 1rem;
-    background: url(${props => props.image}) center;
     text-align: center;
+    background: url(${props => props.image}) center;
+    background-size: 170%;
+    transition: background-size .5s;
+
+    &:hover {
+        background-size: 250%;
+    }
 
     &::before {
         content: '';
@@ -34,6 +40,7 @@ export const ItemImg = styled.img`
     max-width: 100%;
     max-height: 100%;
     border-radius: 50%;
+    filter: drop-shadow(0 0 .3rem rgba(100,100,100,0.3));
 `;
 
 export const ItemTitle = styled.div`

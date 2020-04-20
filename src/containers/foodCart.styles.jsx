@@ -1,7 +1,20 @@
 import styled from 'styled-components';
 
 export const FoodCartWrapper = styled.div`
+    margin-top: 4.5rem;
     padding-left: 1rem;
+`;
+
+export const ListInfo = styled.li`
+    float: right;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: .7rem;
+    background-color: #e6c212;
+    text-transform: uppercase;
 `;
 
 export const CartTitle = styled.h1`
@@ -14,7 +27,8 @@ export const Total = styled.p`
 `;
 
 export const CartItemsContainer = styled.div`
-    height: calc(60vh - 10rem);
+    height: calc(60vh - 10rem);  
+    overflow-x: hidden;
     overflow-y: scroll;
 `;
 
