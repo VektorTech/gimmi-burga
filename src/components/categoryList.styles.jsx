@@ -10,11 +10,11 @@ export const CategoryWrapper = styled.div`
 export const CategoriesList = styled.ul`
     white-space: nowrap;
     overflow: hidden;
-    width: 90%;
+    width: 99%;
 `;
 
 export const CategoriesListItem = styled.li`
-    padding: 0 1rem;
+    padding: 0 .5rem;
     display: inline-block;
     &:last-child {
         float: right;

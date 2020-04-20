@@ -4,7 +4,6 @@ export const FooterWrapper = styled.div`
     height: 8rem;
     max-width: 100%;
     background-color: #e6c212;
-    margin: 5rem 0 0 0;
     padding: 1rem 10%;
 `;
 

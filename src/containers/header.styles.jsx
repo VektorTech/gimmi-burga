@@ -6,9 +6,10 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
-    width: 92%;
+    width: calc(100% - 2rem);
     height: 100%;
     margin: 0 auto;
+    padding: 0 .5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,12 +20,11 @@ export const LogoContainer = styled.div``;
 export const LogoImg = styled.img`
     /* width: 8rem; */
     width: 35%;
-    margin-left: .5rem;
 `;
 
 export const SearchContainer = styled.div`
-    margin-left: -37%;
-    width: 47%;
+    margin-left: -25%;
+    width: 65%;
 `;
 
 export const SearchInput = styled.input`

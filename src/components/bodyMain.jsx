@@ -9,7 +9,8 @@ const Wrapper = styled.div`
     width: 100%;
     max-height: calc(100vh - 4.5rem);
     overflow-y: scroll;
-    padding-top: 1rem;
+    padding: 1rem;
+    padding-bottom: 0;
 `;
 
 export const BodyMain = () => {

@@ -17,8 +17,7 @@ import FoodSearchList from './containers/foodSearchList';
 
 
 const BodyDiv = styled.div`
-    max-width: 92%;
-    margin: 0 4%;
+    max-width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 70% 1fr;
