@@ -9,6 +9,7 @@ import {
     MenuContainer,
     SearchInput,
     List, 
+    MenuBtn,
     // ListInfo,
     LogoImg,
     // FavModal,
@@ -56,6 +57,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
         </ModalBackdrop> */}
 
         <HeaderContainer>
+            <MenuBtn><span>🍔</span></MenuBtn>
             <LogoContainer><Link to='/'> <LogoImg src="/logo.png"/> </Link></LogoContainer>
             <SearchContainer>
                 <form>
@@ -78,9 +80,9 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                     <input type="submit" onClick={onSubmitHandler} style={{"display":"none"}}/> 
                 </form>
             </SearchContainer>
-            <MenuContainer>
+            {/* <MenuContainer>
                 <List>
-                    {/* { currentUser ?
+                    { currentUser ?
                         <>
                         <ListInfo>
                             <form>
@@ -91,9 +93,9 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                         </>
                         :
                         <ListInfo><Link to="signin">Sign In</Link></ListInfo>
-                    } */}
+                    }
                 </List>
-            </MenuContainer>
+            </MenuContainer> */}
         </HeaderContainer>
     </HeaderWrapper> 
     );

@@ -21,7 +21,7 @@ export const CategoryList = () => {
                     </select>
                 </CategoriesListItem>
                 <CategoriesListItem>
-                    <h1><span>🍔</span> { current_category==="undefined" ? "All" : current_category }</h1>
+                    <h1>{ current_category==="undefined" ? "All" : current_category }</h1>
                 </CategoriesListItem>
             </CategoriesList>
         </CategoryWrapper>

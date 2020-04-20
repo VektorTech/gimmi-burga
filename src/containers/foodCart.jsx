@@ -33,7 +33,7 @@ const FoodCart = ({cart, removeFromCart, current_user, amount, cartSize}) => {
                                    .reduce((prev, curr) => prev + curr) + 4.99).toFixed(2): "0.00" }</TotalAmount>
             </div>
             <ButtonWrapper>
-                <CheckoutBtn>Checkout</CheckoutBtn>
+                <CheckoutBtn>Checkout <span>➜</span></CheckoutBtn>
             </ButtonWrapper>
         </FoodCartWrapper>
     );

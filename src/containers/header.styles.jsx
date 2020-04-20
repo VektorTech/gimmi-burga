@@ -16,14 +16,21 @@ export const HeaderContainer = styled.div`
     align-items: center;
 `;
 
-export const LogoContainer = styled.div``;
+export const MenuBtn = styled.div`
+    font-size: 1.8rem;
+`;
+
+export const LogoContainer = styled.div`
+    margin-left: 1rem;
+    width: 15%;
+`;
+
 export const LogoImg = styled.img`
-    /* width: 8rem; */
-    width: 35%;
+    width: 100%;
 `;
 
 export const SearchContainer = styled.div`
-    margin-left: -25%;
+    margin-right: 1rem;
     width: 65%;
 `;
 

@@ -23,12 +23,12 @@ export const NavItem = styled.li`
 
 export const CopyText = styled.div`
     width: 100%;
-    height: 2rem;
+    height: 1.8rem;
     text-align: center;
     color: #fff;
     background-color: #222;
     font-size: .8rem;
-    line-height: 1.7rem;
+    line-height: 1.8rem;
 
     & strong {
         color: #fff;

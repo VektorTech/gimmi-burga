@@ -36,7 +36,7 @@ export const ItemImage = styled.div`
 
 export const ItemImg = styled.img`
     margin-top: -100%;
-    margin-bottom: .6rem;
+    margin-bottom: .7rem;
     max-width: 100%;
     max-height: 100%;
     border-radius: 50%;
@@ -59,11 +59,12 @@ export const ItemPrice = styled.div`
     width: 100%;
     height: 20%;
     font-size: .7rem;
+    font-weight: bold;
     margin-left: .2rem;
     
     span {
         margin-right: .5rem;
-        color: #777;
+        color: #888;
     }
 `;
 

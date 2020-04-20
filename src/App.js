@@ -28,7 +28,7 @@ const BodyDiv = styled.div`
 
 const Wrapper = styled.div`
     width: 100%;
-    max-height: 100vh;
+    height: 100vh;
     /* overflow-y: scroll; */
     /* padding: 2rem 0 0 10%; */
 `;

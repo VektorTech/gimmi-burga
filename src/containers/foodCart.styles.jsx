@@ -23,6 +23,7 @@ export const CartTitle = styled.h1`
 
 export const Total = styled.p`
     font-size: 1rem;
+    font-weight: 800;
     display:inline;
 `;
 
@@ -47,7 +48,12 @@ export const CheckoutBtn = styled.button`
     right: 0;
     width: 15%;
     height: 3rem;
+    font-weight: bold;
     border: none;
     border-radius: 1rem 0 0 1rem;
     background-color: #e6c212;
+
+    & span {
+        margin-left: .5rem;
+    }
 `;

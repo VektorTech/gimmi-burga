@@ -24,6 +24,7 @@ export const Span = styled.span`
 
     &:nth-of-type(1){
         width: 1rem;
+        margin-right: 0;
     }
 
     &:nth-of-type(3){
