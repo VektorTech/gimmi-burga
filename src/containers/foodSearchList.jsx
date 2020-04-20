@@ -7,7 +7,7 @@ import { getSearchList } from '../redux/actions/product.actions';
 
 const FoodListWrapper = styled.div`
     max-height: calc(100vh - 4.5rem);
-    padding: 1rem;
+    padding: 2rem;
     overflow-y: scroll;
     display: flex;
     flex-direction: row;

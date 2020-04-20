@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.div`
-    padding: 2rem;
+    padding: 3rem;
     text-align: center;
     line-height: 2rem;
 `;
@@ -18,7 +18,7 @@ export const Description = styled.p`
 
 export const TextArea = styled.textarea`
     width: 100%;
-    height: 12rem;
+    height: 15rem;
     border-radius: .5rem;
     resize: none;
 `;

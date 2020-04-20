@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const FoodCartWrapper = styled.div`
-    padding: 3rem 1rem 0 1rem;
-    background-color: #eee;
+    padding: 3rem 2rem 0 2rem;
+    background-color: #f9f9f9;
 `;
 
 export const ListInfo = styled.li`

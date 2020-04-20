@@ -6,10 +6,10 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
-    width: calc(100% - 2rem);
+    width: calc(100% - 4rem);
     height: 100%;
     margin: 0 auto;
-    padding: 0 .5rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,7 +21,6 @@ export const MenuBtn = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-    margin-left: 1rem;
     width: 15%;
 `;
 

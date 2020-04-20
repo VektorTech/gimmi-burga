@@ -8,6 +8,7 @@ export const ItemWrapper = styled.div`
 `;
 
 export const Remove = styled.button`
+    font-size: .7rem;
     vertical-align: middle;
     text-align: center;
     background: transparent;

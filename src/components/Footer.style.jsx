@@ -5,6 +5,7 @@ export const FooterWrapper = styled.div`
     max-width: 100%;
     background-color: #e6c212;
     padding: 1rem 10%;
+    text-align: center;
 `;
 
 export const Heading = styled.h2`
@@ -18,7 +19,9 @@ export const NavList = styled.ul`
 `;
 
 export const NavItem = styled.li`
-    padding: .3rem 0;
+    font-size: .7rem;
+    font-weight: bold;
+    padding: .2rem 0;
 `;
 
 export const CopyText = styled.div`
