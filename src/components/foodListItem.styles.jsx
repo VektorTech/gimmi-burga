@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 export const FoodItemWrapper = styled.div`
     width: 31.2%;
-    min-width: 12rem;
+    min-width: 16rem;
     height: 10rem;
     margin: .7rem 1%;
     white-space: nowrap;
@@ -36,7 +36,7 @@ export const ItemImage = styled.div`
 
 export const ItemImg = styled.img`
     margin-top: -100%;
-    margin-bottom: .7rem;
+    /* margin-bottom: .7rem; */
     max-width: 100%;
     max-height: 100%;
     border-radius: 50%;

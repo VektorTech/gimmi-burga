@@ -1,21 +1,23 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.div`
-    height: 8rem;
     max-width: 100%;
     background-color: #e6c212;
-    padding: 1rem 10%;
+    padding: 2rem 10%;
     text-align: center;
 `;
 
 export const Heading = styled.h2`
     font-size: 1rem;
     color: #633ac9;
+    user-select: none;
 `;
 
 export const NavList = styled.ul`
     display: inline-block;
     width: 33.33%;
+    min-width: 15rem;
+    margin-bottom: 1rem;
 `;
 
 export const NavItem = styled.li`

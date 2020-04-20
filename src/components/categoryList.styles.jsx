@@ -5,6 +5,10 @@ export const CategoryWrapper = styled.div`
     line-height: 5rem;
     display: flex;
     flex-direction:row;
+
+    @media screen and (max-width: 667px) {
+        line-height: 2rem;
+    }
 `;
 
 export const CategoriesList = styled.ul`

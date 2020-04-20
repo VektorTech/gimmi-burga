@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.div`
-    padding: 3rem;
+    padding: 1rem 3rem;
     text-align: center;
     line-height: 2rem;
 `;

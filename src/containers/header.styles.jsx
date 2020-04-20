@@ -14,6 +14,11 @@ export const HeaderContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+    }
 `;
 
 export const MenuBtn = styled.div`
@@ -24,20 +29,29 @@ export const LogoContainer = styled.div`
     width: 15%;
 `;
 
+
 export const LogoImg = styled.img`
     width: 100%;
 `;
 
 export const SearchContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    background-color: #f7f7f7;
     margin-right: 1rem;
     width: 65%;
+`;
+
+export const SearchIcon = styled.div`
+    width: 10%;
+    padding: .6rem 0 0 3%;
 `;
 
 export const SearchInput = styled.input`
     width: 100%;
     height: 2.1rem;
     border-radius: .2rem;
-    padding: 0 1rem;
+    padding: 0 .5rem;
     border:none;
     background-color: #f7f7f7;
 `;

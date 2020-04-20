@@ -22,7 +22,10 @@ const BodyDiv = styled.div`
     display: grid;
     grid-template-columns: 70% 1fr;
     grid-template-rows: 1fr;
-    /* grid-gap: 0 2.5%; */
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 100%;
+    }
 `;
 
 

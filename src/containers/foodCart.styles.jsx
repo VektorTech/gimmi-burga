@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const FoodCartWrapper = styled.div`
     padding: 3rem 2rem 0 2rem;
     background-color: #f9f9f9;
+      
+    @media screen and (max-width: 1024px) {
+        padding: 3rem 2rem;
+    }
 `;
 
 export const ListInfo = styled.li`
@@ -55,5 +59,10 @@ export const CheckoutBtn = styled.button`
 
     & span {
         margin-left: .5rem;
+    }
+
+        
+    @media screen and (max-width: 1024px) {
+        width: 40%;
     }
 `;
