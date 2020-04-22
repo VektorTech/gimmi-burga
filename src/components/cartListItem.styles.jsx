@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const ItemWrapper = styled.div`
     width: 100%;
     margin: 1rem 0;
-    font-size: .8rem;
+    font-size: 1.2rem;
     white-space: nowrap;
 `;
 
 export const Remove = styled.button`
-    font-size: .7rem;
+    font-size: 1rem;
     vertical-align: middle;
     text-align: center;
     background: transparent;

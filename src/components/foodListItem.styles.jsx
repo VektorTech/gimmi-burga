@@ -3,11 +3,19 @@ import {Link} from 'react-router-dom';
 
 export const FoodItemWrapper = styled.div`
     width: 31.2%;
-    min-width: 16rem;
-    height: 10rem;
-    margin: .7rem 1%;
+    min-width: 25rem;
+    height: 15rem;
+    margin: 1rem .5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    &:hover div:nth-of-type(1) {
+        background-size: 250%;
+
+        & div {
+            background: rgba(240,240,240,.4);
+        }
+    }
 `;
 
 export const ItemImage = styled.div`
@@ -18,25 +26,17 @@ export const ItemImage = styled.div`
     background: url(${props => props.image}) center;
     background-size: 170%;
     transition: background-size .5s;
+`;
 
-    &:hover {
-        background-size: 250%;
-    }
-
-    &::before {
-        content: '';
-        top:0;left:0;
-        display: block;
-        border-radius: 1rem;
-        width: 100%;
-        height: 100%;
-        background: rgba(240,240,240,.75);
-    }
+export const Transparent = styled.div`
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    background: rgba(240,240,240,.75);
+    transition: .5s;
 `;
 
 export const ItemImg = styled.img`
-    margin-top: -100%;
-    /* margin-bottom: .7rem; */
     max-width: 100%;
     max-height: 100%;
     border-radius: 50%;
@@ -46,19 +46,18 @@ export const ItemImg = styled.img`
 export const ItemTitle = styled.div`
     width: 95%;
     height: 20%;
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding-top: .6rem;
     margin-left: .2rem;
     font-weight: bold;
     overflow: hidden;
     text-overflow: ellipsis;
-
 `;
 
 export const ItemPrice = styled.div`
     width: 100%;
     height: 20%;
-    font-size: .7rem;
+    font-size: 1.1rem;
     font-weight: bold;
     margin-left: .2rem;
     

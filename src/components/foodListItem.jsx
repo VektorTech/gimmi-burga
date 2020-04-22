@@ -4,7 +4,8 @@ import {
     Anchor, ItemImage,
     ItemImg,
     ItemTitle,
-    ItemPrice
+    ItemPrice,
+    Transparent
 } from './foodListItem.styles';
 
 export const FoodItem = ({name, _id, price, imgLow, category}) => {
@@ -25,7 +26,9 @@ export const FoodItem = ({name, _id, price, imgLow, category}) => {
         <FoodItemWrapper>
             <Anchor to={'add-to-cart/'+_id}>
                 <ItemImage image={imgLow}>
-                    <ItemImg src={imgLow} alt={name} />
+                    <Transparent>
+                        <ItemImg src={imgLow} alt={name} />
+                    </Transparent>
                 </ItemImage>
                 <ItemTitle>{name}</ItemTitle>
                 <ItemPrice>

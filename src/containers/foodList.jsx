@@ -8,6 +8,7 @@ const FoodListWrapper = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     @media screen and (max-width: 1024px) {
         justify-content: center;

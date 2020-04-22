@@ -7,7 +7,7 @@ export const CategoryWrapper = styled.div`
     flex-direction:row;
 
     @media screen and (max-width: 667px) {
-        line-height: 2rem;
+        line-height: 2.5rem;
     }
 `;
 

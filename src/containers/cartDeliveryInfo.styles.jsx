@@ -13,7 +13,7 @@ export const AddressInput = styled.input`
     border-radius: .2rem;
     border: none;
     width: 85%;
-    height: 1.5rem;
+    height: 2rem;
     padding-left: .5rem;
 
     &:read-only {
@@ -24,5 +24,5 @@ export const AddressInput = styled.input`
 
 export const Span = styled.span`
     ${(props) => props.right ? "float:right;color:yellow;cursor:pointer;" : "color: white;"}
-    font-size: .8rem;
+    font-size: 1.1rem;
 `;

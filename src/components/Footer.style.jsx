@@ -8,7 +8,7 @@ export const FooterWrapper = styled.div`
 `;
 
 export const Heading = styled.h2`
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #633ac9;
     user-select: none;
 `;
@@ -16,24 +16,24 @@ export const Heading = styled.h2`
 export const NavList = styled.ul`
     display: inline-block;
     width: 33.33%;
-    min-width: 15rem;
+    min-width: 25rem;
     margin-bottom: 1rem;
 `;
 
 export const NavItem = styled.li`
-    font-size: .7rem;
+    font-size: 1.1rem;
     font-weight: bold;
     padding: .2rem 0;
 `;
 
 export const CopyText = styled.div`
     width: 100%;
-    height: 1.8rem;
+    height: 2.2rem;
     text-align: center;
     color: #fff;
     background-color: #222;
-    font-size: .8rem;
-    line-height: 1.8rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
 
     & strong {
         color: #fff;

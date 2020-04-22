@@ -6,6 +6,7 @@ import {
     HeaderContainer,
     LogoContainer,
     SearchContainer,
+    SearchForm,
     // MenuContainer,
     SearchInput,
     SearchIcon,
@@ -60,6 +61,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
         <HeaderContainer>
             <MenuBtn><span>🍔</span></MenuBtn>
             <LogoContainer><Link to='/'> <LogoImg src="/logo.png"/> </Link></LogoContainer>
+
             <SearchContainer>
                 <SearchIcon>
             <svg width="15px" 
@@ -80,7 +82,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                         <path d="M11.4913,11.4913 L17.8683,17.8683" id="Stroke-7"></path>
                     </g></g></g></svg>
                 </SearchIcon>
-                <form style={{width:"90%"}}>
+                <SearchForm>
                     <SearchInput 
                         placeholder="Search" 
                         id="search" 
@@ -98,7 +100,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
                     </datalist> 
 
                     <input type="submit" onClick={onSubmitHandler} style={{"display":"none"}}/> 
-                </form>
+                </SearchForm>
             </SearchContainer>
             {/* <MenuContainer>
                 <List>
