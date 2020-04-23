@@ -6,7 +6,7 @@ import {
 
 export const CartListItem = ({price, amount, name, removeFromCart, _id}) => (
     <ItemWrapper>
-        <Remove onClick={() => removeFromCart(_id)} ><span>❌</span></Remove>
+        <Remove onClick={() => removeFromCart(_id)} ><span role="img" aria-label="X">❌</span></Remove>
         <Span>{amount}</Span>
         <Span>●</Span>
         <Span>{name}</Span>
@@ -16,7 +16,7 @@ export const CartListItem = ({price, amount, name, removeFromCart, _id}) => (
 
 export const DeliveryItem = () => (
     <ItemWrapper>
-        <Remove><span>❌</span></Remove>
+        <Remove><span role="img" aria-label="X">❌</span></Remove>
         <Span>1</Span>
         <Span>●</Span>
         <Span>Delivery</Span>

@@ -19,9 +19,9 @@ import { removeFromCart } from '../redux/actions/cart.actions';
 
 const FoodCart = ({cart, removeFromCart, current_user, amount, cartSize}) => {
     return (
-        <FoodCartWrapper>
+        <FoodCartWrapper id="cart">
             <ListInfo>{cartSize}</ListInfo>       
-            <CartTitle>Order List <span>😋</span></CartTitle>
+            <CartTitle>Order List <span role="img" aria-label="Face Savouring Delicious Food">😋</span></CartTitle>
             <CartDeliveryInfo address={current_user.address} />
                 <CartItemsContainer>      
                     { cart.map( (item, i) => <CartListItem key={item._id} {...item} removeFromCart={removeFromCart} />) }

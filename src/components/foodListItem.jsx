@@ -24,7 +24,7 @@ export const FoodItem = ({name, _id, price, imgLow, category}) => {
 
     return (
         <FoodItemWrapper>
-            <Anchor to={'add-to-cart/'+_id}>
+            <Anchor to={"add-to-cart/"+_id}>
                 <ItemImage image={imgLow}>
                     <Transparent>
                         <ItemImg src={imgLow} alt={name} />

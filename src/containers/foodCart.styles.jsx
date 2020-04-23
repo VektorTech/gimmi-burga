@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const FoodCartWrapper = styled.div`
-    padding: 1.5rem 4rem 0 4rem;
+    padding: 1rem 4rem 0 4rem;
     background-color: #f9f9f9;
-      
+
     @media screen and (max-width: 1024px) {
         padding: 6rem 3rem;
     }
@@ -18,7 +18,6 @@ export const ListInfo = styled.li`
     text-align: center;
     border-radius: .7rem;
     background-color: #e6c212;
-    text-transform: uppercase;
 `;
 
 export const CartTitle = styled.h1`

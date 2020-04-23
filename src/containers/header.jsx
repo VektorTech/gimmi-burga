@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createRef } from 'react';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import {
@@ -7,12 +7,13 @@ import {
     LogoContainer,
     SearchContainer,
     SearchForm,
-    // MenuContainer,
+    MenuContainer,
     SearchInput,
     SearchIcon,
-    // List, 
+    List, 
+    ListItem,
     MenuBtn,
-    // ListInfo,
+    CartSize,
     LogoImg,
     // FavModal,
     // ModalBackdrop
@@ -30,6 +31,8 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
         const query = document.getElementById("search").value;
         history.push(`/search?q=${query}`);
     } 
+
+    const menu = createRef();
 
     // const onSignout = (e) => {
     //     e.preventDefault();
@@ -50,6 +53,22 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
 
     return ( 
     <HeaderWrapper>
+        <MenuContainer ref={menu}>
+            <List>
+                <ListItem>
+                    <span role="img" aria-label="X" onClick={() => menu.current.classList.toggle('menu_active')}>❌</span>
+                </ListItem>
+                <ListItem>
+                    <a href="#cart"> <CartSize>{cartSize}</CartSize> View Cart</a>
+                </ListItem>
+                <ListItem>
+                    <a href='/'>Sign In</a>
+                </ListItem>
+                <ListItem>
+                    <a href='/'>Sign Up</a>
+                </ListItem>
+            </List>
+        </MenuContainer>
 
         {/* <ModalBackdrop onClick={() => toggleModal(true)} hidden={modalView}>
             <FavModal onClick={e => e.stopPropagation()}>
@@ -59,24 +78,24 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
         </ModalBackdrop> */}
 
         <HeaderContainer>
-            <MenuBtn><span>🍔</span></MenuBtn>
-            <LogoContainer><Link to='/'> <LogoImg src="/logo.png"/> </Link></LogoContainer>
+            <MenuBtn><span role="img" aria-label="hamburger" onClick={() => menu.current.classList.toggle('menu_active')}>🍔</span></MenuBtn>
+            <LogoContainer><Link to='/'><LogoImg src="/logo.png"/></Link></LogoContainer>
 
             <SearchContainer>
                 <SearchIcon>
-            <svg width="15px" 
+                <svg width="15px" 
                  height="15px" 
                  xmlns="http://www.w3.org/2000/svg" 
                  viewBox="0 0 18 18" 
                  aria-hidden="true">
                     <g  id="Page-1" 
                         stroke="none" 
-                        stroke-width="1" 
+                        strokeWidth="1" 
                         fill="none" 
-                        fill-rule="evenodd">
+                        fillRule="evenodd">
                     <g  id="Artboard-1" 
                         stroke="#777777" 
-                        stroke-width="1.3">
+                        strokeWidth="1.3">
                     <g  id="Group">
                         <path d="M13.4044,7.0274 C13.4044,10.5494 10.5494,13.4044 7.0274,13.4044 C3.5054,13.4044 0.6504,10.5494 0.6504,7.0274 C0.6504,3.5054 3.5054,0.6504 7.0274,0.6504 C10.5494,0.6504 13.4044,3.5054 13.4044,7.0274 Z" id="Stroke-3"></path>
                         <path d="M11.4913,11.4913 L17.8683,17.8683" id="Stroke-7"></path>
@@ -125,6 +144,7 @@ const Header = ({currentUser, SignOut, cartSize, products}) => {
 
 export default connect(
     state => ({
+        cartSize: state.cart.cart.length,
         currentUser: state.user.current_user,
         products: state.product.all_products
     }), dispatch => ({
