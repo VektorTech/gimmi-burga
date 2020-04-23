@@ -31,7 +31,7 @@ export const Total = styled.p`
 `;
 
 export const CartItemsContainer = styled.div`
-    height: calc(60vh - 8rem);  
+    height: calc(60vh - 13rem);  
     overflow-x: hidden;
     overflow-y: scroll;
 `;
