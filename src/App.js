@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
 import styled from 'styled-components';
+import {Helmet} from "react-helmet";
 
 import { getAllProducts } from './redux/actions/product.actions';
 
@@ -77,6 +78,9 @@ const App = ({products, getAllProducts}) => {
 
     return transition.map( ({item, props, key}) => (
         <BodyDiv key={key} style={props}>
+        <Helmet>
+            <title>Gimmi Burga</title>
+        </Helmet>
         <Switch location={item}>
             <Route exact path="/" component={Body}/>
             <Route path="/category" component={Body}/>

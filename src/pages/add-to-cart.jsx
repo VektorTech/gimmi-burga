@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 import { addToCart } from '../redux/actions/cart.actions';
 
@@ -35,6 +36,9 @@ const AddToCart = ({ addToCart, products }) => {
 
     return (
         <Form>
+            <Helmet>
+                <title>Add To Cart: {product.name}</title>
+            </Helmet>
             <form action="">
             <Name>{product.name}</Name>
             <Description>{product.description}</Description>
