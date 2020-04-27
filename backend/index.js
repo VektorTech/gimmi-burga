@@ -14,7 +14,7 @@ mongoose.connect(process.env.DB_URI_STRING, {useNewUrlParser: true, useFindAndMo
 
 const app = express();
 
-app.use(cors({origin:"http://localhost:3000", credentials:true}));
+app.use(cors({origin:"http://localhost:"+process.env.PORT || 3000, credentials:true}));
 app.use(express.urlencoded());
 
 app.use(session({
