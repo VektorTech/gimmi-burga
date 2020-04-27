@@ -34,4 +34,4 @@ app.get('/', () => console.log('hdd'));
 app.use('/products', productRoute);
 app.use('/search', searchRoute);
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
